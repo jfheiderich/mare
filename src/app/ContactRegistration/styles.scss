@@ -1,0 +1,19 @@
+.contact-registration {
+  padding: 24px;
+
+  height: calc(100dvh - 250px);
+  overflow-y: scroll;
+  overflow-x: visible;
+  .contact-registration__form {
+    .form__wrapper {
+      display: grid;
+      gap: 16px;
+
+      .form__grid-template {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+    }
+  }
+}

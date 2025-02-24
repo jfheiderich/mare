@@ -1,0 +1,70 @@
+.approved-registration {
+  padding: 24px;
+  height: calc(100dvh - 250px);
+  overflow-y: scroll;
+  overflow-x: visible;
+  .approved-registration__form {
+    .form__wrapper {
+      display: grid;
+      gap: 16px;
+
+      .wrapper__grid-template--for-2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+
+      .wrapper__grid-template--modified {
+        display: grid;
+        grid-template-columns: 29.5% 1fr;
+        gap: 16px;
+      }
+
+      .wrapper__grid-template--for-3 {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 16px;
+      }
+    }
+    .approved-registration__experiences-wrapper {
+      .list-experiences {
+        .list-experience__ul {
+          .list-experience__li {
+            list-style: circle;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--mare-dark-ocean-green);
+            display: grid;
+            grid-template-columns: auto 200px 16px;
+            .li__text {
+              font-size: 16px;
+              color: var(--mare-dark-ocean-green);
+            }
+
+            .li__delete-icon {
+              cursor: pointer;
+              width: 16px;
+              height: 16px;
+              transition: opacity 0.3s ease-in-out;
+              &:hover {
+                opacity: 0.5;
+              }
+            }
+
+            &:last-child {
+              border: none;
+            }
+          }
+        }
+      }
+
+      .experiences-wrapper__content {
+        border: 1px solid var(--mare-border);
+        padding: 16px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        border-radius: 24px;
+      }
+    }
+  }
+}

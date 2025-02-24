@@ -1,0 +1,23 @@
+.job-vacancy {
+  padding: 24px;
+  height: calc(100dvh - 250px);
+  overflow-y: scroll;
+  overflow-x: visible;
+  .job-vacancy__form {
+    .form__wrapper {
+      display: grid;
+      gap: 16px;
+
+      .wrapper__grid-template {
+        display: grid;
+        grid-template-columns: 29.5% 1fr;
+        gap: 16px;
+      }
+      .wrapper__grid-template--modified {
+        grid-template-columns: 1fr 1fr;
+        display: grid;
+        gap: 16px;
+      }
+    }
+  }
+}

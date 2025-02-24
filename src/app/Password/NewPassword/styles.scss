@@ -1,0 +1,11 @@
+.new-password-page {
+  padding: 24px;
+
+  .new-password-page__form {
+    display: grid;
+
+    .form__back-button {
+      justify-self: flex-end;
+    }
+  }
+}

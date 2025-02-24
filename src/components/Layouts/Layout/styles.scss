@@ -1,0 +1,215 @@
+#layout-component {
+  position: relative;
+  justify-items: center;
+  overflow-y: hidden;
+  overflow-x: hidden;
+
+  .layout-component-wrapper {
+    padding: 0 16px;
+    width: 100dvw;
+
+    .layout-component__navbar {
+      background-color: var(--mare-white);
+      overflow-x: visible;
+      position: fixed;
+      left: 0;
+      right: 0;
+      top: 0;
+      padding: 14px;
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--mare-border);
+      box-shadow: var(--mare-box-shadow);
+
+      .navbar__text-wrapper {
+        font-size: 18px;
+        font-family: "Roboto Italic";
+        .text-wrapper__bold {
+          font-family: "Roboto Bold";
+        }
+      }
+
+      .navbar__logo-wrapper {
+        width: 66px;
+        height: auto;
+
+        [alt="ondas azuis"] {
+          width: 100%;
+        }
+      }
+
+      .navbar__login-wrapper {
+        position: relative;
+        .login-wrapper__button {
+          display: flex;
+          gap: 8px;
+          background-color: transparent;
+          border: none;
+          font-size: 18px;
+          .button__arrow-wrapper {
+            &.upside-down {
+              transform: rotate(180deg);
+            }
+            [alt="seta para baixo"] {
+            }
+          }
+        }
+
+        .login-wrapper__drop-down {
+          background-color: var(--mare-white);
+          position: absolute;
+          right: -13px;
+          border-radius: 16px 0 16px 16px;
+          box-shadow: var(--mare-box-shadow);
+          top: 42px;
+          .drop-down__list {
+            z-index: 10;
+            .list__list-item {
+              text-transform: uppercase;
+              text-wrap: nowrap;
+              padding: 16px;
+              transition: all 0.3s ease-in-out;
+              cursor: pointer;
+              &:hover {
+                background-color: var(--mare-gray-super-light);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  //   &.layout-principal {
+  //     &.no-navbar {
+  //       grid-template-rows: auto;
+  //       align-items: center;
+  //     }
+
+  //     &.navigation {
+  //       grid-template-rows: 100px 80px 1fr 90px;
+  //     }
+  //   }
+
+  //   .layout-component__navbar {
+  //     background-color: var(--mare-white);
+  //     max-width: 440px;
+  //     min-width: 270px;
+  //     width: 100%;
+
+  //
+  //
+  //
+
+  //       .navbar-mare__principal {
+  //
+  //       }
+  //     }
+  //   }
+
+  //   .layout-component__page-title {
+  //     display: grid;
+  //     height: 40px;
+  //     grid-template-columns: auto 1fr auto;
+  //     align-items: center;
+  //     gap: 8px;
+  //     width: 100%;
+  //     max-width: 440px;
+  //     min-width: 270px;
+  //     border-bottom: 1px solid var(--mare-turquoise-blue);
+
+  //     .page-title__icon {
+  //       width: 24px;
+  //       height: auto;
+  //     }
+
+  //     .button-link {
+  //       justify-self: flex-end;
+  //     }
+  //   }
+
+  #layout-component__main {
+    // background-color: var(--mare-white);
+    flex: 1;
+
+    &.space-nav {
+      margin-top: 60px;
+    }
+  }
+
+  .layout-component__footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+
+    [alt="fundo azul em formato de onda"] {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 0;
+      max-height: 146px;
+      width: 100%;
+    }
+
+    .footer__links-container {
+      z-index: 1;
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+
+      .footer__links {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 10%;
+        margin-bottom: 20px;
+
+        .links__link {
+          // text-align: center;
+          font-family: "Roboto Bold";
+          color: var(--mare-white);
+          cursor: pointer;
+
+          font-size: 16px;
+        }
+      }
+
+      .footer__social-medias {
+        padding: 0 16px;
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        .social-medias__icon-text-wrapper {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          .icon-text-wrapper__icon {
+          }
+
+          .icon-text-wrapper__text {
+            font-size: 12px;
+            color: var(--mare-white);
+
+            a {
+              color: var(--mare-white);
+            }
+          }
+        }
+      }
+    }
+
+    .footer__rights-text {
+      margin-top: 8px;
+      z-index: 1;
+      position: relative;
+      text-align: center;
+      color: var(--mare-white);
+      font-family: "Roboto Light";
+      font-size: 12px;
+    }
+  }
+}

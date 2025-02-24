@@ -1,0 +1,11 @@
+.redefinition-password-page {
+  padding: 24px;
+
+  .redefinition-password-page__form {
+    display: grid;
+
+    .form__back-button {
+      justify-self: flex-end;
+    }
+  }
+}

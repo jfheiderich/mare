@@ -1,0 +1,24 @@
+#paragraph-text {
+  color: var(--mare-dark-ocean-green);
+  font-family: "Roboto Regular";
+  display: flex;
+  align-items: center;
+
+  [alt="text icon"] {
+    margin-right: 12px;
+    height: 18px;
+    width: 18px;
+  }
+
+  &.bold-text {
+    font-family: "Roboto Bold";
+  }
+
+  &.text-color-white {
+    color: var(--mare-white);
+  }
+
+  &.text-color-black {
+    color: var(--mare-black);
+  }
+}

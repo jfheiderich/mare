@@ -1,0 +1,11 @@
+.redefinition-success-page {
+  padding: 24px;
+
+  .redefinition-success-page__form {
+    display: grid;
+
+    .form__back-button {
+      justify-self: flex-end;
+    }
+  }
+}

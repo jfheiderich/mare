@@ -1,0 +1,111 @@
+@import url("../assets/fonts/Roboto/index.scss");
+
+:root {
+  --mare-aqua-blue: #addee6;
+  --mare-deep-sea-blue: #043941;
+  --mare-ocean-teal: #02677a;
+  --mare-turquoise-blue: #0097b2;
+  --mare-sea-dust: #00647d;
+  --mare-sea-light-blue: #0093b6;
+  --mare-dark-ocean-green: #013943;
+  // --mare-dark-ocean-green: #003845;
+  --mare-pink: #f9dedc;
+  --mare-red-blood: #852221;
+  --mare-red: #e32624;
+  --mare-white: #ffffff;
+  --mare-black: #000000;
+  --mare-gray-super-light: #f4f4f4;
+  --mare-gray-light: #dcdcdc;
+  --mare-gray: #cccccc;
+  --mare-gray-dark: #999999;
+  --mare-gray-super-dark: #484848;
+  --mare-box-shadow: 0px 2px 10px 0px #01394330;
+  --mare-border: #01394330;
+  --mare-color-primary: #013943;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  scrollbar-width: none;
+}
+
+body {
+  font-family: "Roboto Regular";
+  height: 100dvh;
+  width: 100dvw;
+  position: relative;
+  scrollbar-width: none;
+  line-height: 1.6;
+  overflow: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+a {
+  text-decoration: none;
+  font-size: 1em;
+  color: var(--mare-dark-ocean-green);
+}
+
+p,
+li {
+  font-size: 1em;
+  color: var(--mare-dark-ocean-green);
+}
+
+h1 {
+  font-size: 2em;
+  color: var(--mare-dark-ocean-green);
+}
+
+h2 {
+  font-size: 1.8em;
+  color: var(--mare-dark-ocean-green);
+}
+
+h3 {
+  font-size: 1.6em;
+  color: var(--mare-dark-ocean-green);
+}
+
+h4 {
+  font-size: 1.4em;
+  color: var(--mare-dark-ocean-green);
+}
+
+h5 {
+  font-size: 1.2em;
+  color: var(--mare-dark-ocean-green);
+}
+
+h6 {
+  font-size: 1em;
+  color: var(--mare-dark-ocean-green);
+}
+
+b {
+  font-family: "Roboto Bold";
+}
+
+button {
+  cursor: pointer;
+  color: var(--mare-dark-ocean-green);
+}
+
+input:focus {
+  outline: none;
+  background-color: var(--mare-gray-super-light);
+}
+
+textarea:focus {
+  outline: none;
+  background-color: var(--mare-gray-super-light);
+}

@@ -1,0 +1,10 @@
+.job-vacancy {
+  padding: 0 24px 24px 24px;
+  .job-vacancy__main {
+    display: grid;
+    gap: 16px;
+    height: calc(100dvh - 292px);
+    overflow-y: scroll;
+    overflow-x: visible;
+  }
+}

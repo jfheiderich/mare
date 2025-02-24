@@ -1,0 +1,37 @@
+.not-found-page {
+  width: 100dvw;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+
+  .not-found-page__logo-container {
+    width: 100%;
+    [alt="Mare logo"] {
+      width: 100%;
+    }
+  }
+  .not-found-page__sorry-text {
+    max-width: 70%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .not-found-page__button-back {
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  @media only screen and (min-width: 64rem) {
+    .not-found-page__sorry-text {
+      // max-width: 70%;
+      margin-left: 48px;
+      text-align: left;
+    }
+
+    .not-found-page__button-back {
+      max-width: 400px;
+      margin-left: 48px;
+    }
+  }
+}
