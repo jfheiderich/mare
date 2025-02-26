@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import "./styles.scss";
+import Image from "next/image";
 
 interface GridButtonsProps {
   className?: string;
@@ -25,7 +27,13 @@ const GridButtons: React.FC<GridButtonsProps> = (props) => {
           onClick={btn.action}
         >
           <div className="button__icon">
-            <img src={btn.icon} alt={btn.text} className="icon__icon" />
+            <Image
+              width={100}
+              height={100}
+              src={btn.icon}
+              alt={btn.text}
+              className="icon__icon"
+            />
           </div>
 
           <p className="button__text">{btn.text}</p>

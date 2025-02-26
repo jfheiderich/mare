@@ -1,5 +1,6 @@
+"use client";
 import { createContext, useState, ReactNode, useContext } from "react";
-import { ICandidateRegister } from "types/candidateRegister";
+import { ICandidateRegister } from "@/types/candidateRegister";
 
 interface CandidateRegisterContextProps {
   setCandidateRegister: (candidate: ICandidateRegister) => void;

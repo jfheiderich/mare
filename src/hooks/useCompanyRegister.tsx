@@ -1,5 +1,6 @@
+"use client";
 import React, { createContext, useState, ReactNode, useContext } from "react";
-import { ICompanyRegister } from "types/companyRegister";
+import { ICompanyRegister } from "@/types/companyRegister";
 
 interface CompanyRegisterContextProps {
   setCompanyRegister: (company: ICompanyRegister) => void;

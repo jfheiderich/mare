@@ -1,5 +1,6 @@
+"use client";
 import { createContext, useState, ReactNode, useContext } from "react";
-import { IAgreementRegister } from "types/agreementRegister";
+import { IAgreementRegister } from "@/types/agreementRegister";
 
 interface AgreementRegisterContextProps {
   setAgreementRegister: (agreement: IAgreementRegister) => void;

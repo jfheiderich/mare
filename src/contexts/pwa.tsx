@@ -1,5 +1,6 @@
+"use client";
 import React, { createContext, useState, useContext, useEffect } from "react";
-import { ProviderProps, PWAContextData } from "../types/pwa";
+import { ProviderProps, PWAContextData } from "@/types/pwa";
 
 const isRunningStandalone = (): boolean => {
   if (typeof window === "undefined") return false;

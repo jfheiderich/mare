@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./styles.scss";
-import { useNavigate } from "react-router-dom";
+import Image from "next/image";
+import { useParams, useRouter } from "next/navigation";
 
 interface ToolbarProps {
   className?: string;
@@ -18,7 +19,7 @@ export type ToolbarButton = {
 const Toolbar: React.FC<ToolbarProps> = (props) => {
   const { className, buttons } = props;
   const [activatedButtonId, setActivatedButton] = useState("");
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <nav id="toolbar-component" className={className ?? ""}>
@@ -32,10 +33,12 @@ const Toolbar: React.FC<ToolbarProps> = (props) => {
               onClick={() => {
                 btn.onClick?.();
                 setActivatedButton(btn.id);
-                navigate(btn.routerTo);
+                router.push(btn.routerTo);
               }}
             >
-              <img
+              <Image
+                width={100}
+                height={100}
                 src={btn.icon}
                 alt={`${btn.text} icon`}
                 className="button__icon"

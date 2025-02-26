@@ -1,3 +1,4 @@
+"use client";
 import React, { createContext, useState, ReactNode, useContext } from "react";
 
 interface ModalContextProps {
@@ -8,7 +9,7 @@ interface ModalContextProps {
 
 const ModalContext = createContext<ModalContextProps | undefined>(undefined);
 
-export const ModalProvider = ({ children }: { children: ReactNode }) => {
+export const UseModalProvider = ({ children }: { children: ReactNode }) => {
   const [openUseModal, setOpenUseModal] = useState(false);
   const [modalContent, setModalContent] = useState<ReactNode>(null);
 
@@ -29,7 +30,7 @@ export const ModalProvider = ({ children }: { children: ReactNode }) => {
 export const useModal = () => {
   const context = useContext(ModalContext);
   if (!context) {
-    throw new Error("useModal must be used within a ModalProvider");
+    throw new Error("useModal must be used within a UseModalProvider");
   }
   return context;
 };

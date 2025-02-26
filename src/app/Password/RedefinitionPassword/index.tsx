@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import "./styles.scss";
-import Title from "components/Texts/Title";
-import Paragraph from "components/Texts/Paragraph";
-import InputText from "components/Inputs/InputText";
-import Button from "components/Buttons/Button";
-import Layout from "components/Layouts/Layout";
-import ButtonTextLink from "components/Buttons/ButtonTextLink";
-import { useNavigate } from "react-router-dom";
+import Image from "next/image";
+import Title from "@/components/Texts/Title";
+import Paragraph from "@/components/Texts/Paragraph";
+import InputText from "@/components/Inputs/InputText";
+import Button from "@/components/Buttons/Button";
+import Layout from "@/components/Layouts/Layout";
+import ButtonTextLink from "@/components/Buttons/ButtonTextLink";
+import { useParams, useRouter } from "next/navigation";
 
 const RedefinitionPasswordPage: React.FC = () => {
   const [companyEmail, setCompanyEmail] = useState("");
   const [inputsWarning, setInputsWarning] = useState(false);
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const redefinitionPassRequest = () => {
-    navigate("/new-pass");
+    router.push("/new-pass");
   };
 
   return (

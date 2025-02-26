@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import "./styles.scss";
+import Image from "next/image";
 
 interface ParagraphProps {
   className?: string;
@@ -45,7 +46,9 @@ const Paragraph: React.FC<ParagraphProps> = (props) => {
       className={classesParagraph}
     >
       {iconLeft ? (
-        <img
+        <Image
+          width={100}
+          height={100}
           src={iconLeft}
           alt="text icon"
           style={{ width: fontSize, height: fontSize }}

@@ -1,5 +1,6 @@
+"use client";
 import { createContext, useState, ReactNode, useContext } from "react";
-import { IJObVacancyRegister } from "types/jobVacancyRegister";
+import { IJObVacancyRegister } from "@/types/jobVacancyRegister";
 
 interface JobVacancyRegisterContextProps {
   setJobVacancyRegister: (jobVacancy: IJObVacancyRegister) => void;

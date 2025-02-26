@@ -1,17 +1,19 @@
+"use client";
 import React, { useRef, useState } from "react";
 import "./styles.scss";
-import Title from "components/Texts/Title";
-import Layout from "components/Layouts/Layout";
-import { useNavigate } from "react-router-dom";
-import InputText from "components/Inputs/InputText";
-import Button from "components/Buttons/Button";
-import Textarea from "components/TextAreas/Textarea";
-import { useJobVacancyRegister } from "hooks/useJobVacancyRegister";
+import Image from "next/image";
+import Title from "@/components/Texts/Title";
+import Layout from "@/components/Layouts/Layout";
+import { useParams, useRouter } from "next/navigation";
+import InputText from "@/components/Inputs/InputText";
+import Button from "@/components/Buttons/Button";
+import Textarea from "@/components/TextAreas/Textarea";
+import { useJobVacancyRegister } from "@/hooks/useJobVacancyRegister";
 import { getSearchAddressByCEP } from "api/getSearchApi";
 import InputTextSelect, {
   IOptionInputTextSelectProps,
-} from "components/Inputs/InputTextSelect";
-import STATES from "mocks/states";
+} from "@/components/Inputs/InputTextSelect";
+import STATES from "@/mocks/states";
 
 const JobVacancyRegistrationPage: React.FC = () => {
   const formRef = useRef<HTMLElement | null>(null);
@@ -83,7 +85,7 @@ const JobVacancyRegistrationPage: React.FC = () => {
     });
   };
 
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const validateStringObject = (object: Record<string, string>) => {
     const warningInputs = Object.entries(object)
@@ -136,7 +138,7 @@ const JobVacancyRegistrationPage: React.FC = () => {
 
       setJobVacancyRegister(prepareData);
 
-      navigate("/job-vacancy-view");
+      router.push("/job-vacancy-view");
     }
 
     setRegistrationStep((prev) => prev + 1);

@@ -1,39 +1,40 @@
 import React, { useState } from "react";
 import "./styles.scss";
-import Layout from "components/Layouts/Layout";
-import { useNavigate } from "react-router-dom";
-import InputText from "components/Inputs/InputText";
-import BuildIconWhite from "assets/icons/buildings/buildings-icon-white.svg";
-import IdentityIcon from "assets/icons/identities/identity-icon-white.svg";
-import PaperIconWhite from "assets/icons/papers/paper-icon-white.svg";
-import TableIconWhite from "assets/icons/tables/table-icon-white.svg";
-import GridButtons, { ButtonGrid } from "components/Buttons/GridButtons";
+import Image from "next/image";
+import Layout from "@/components/Layouts/Layout";
+import { useParams, useRouter } from "next/navigation";
+import InputText from "@/components/Inputs/InputText";
+import BuildIconWhite from "../../public/icons/buildings/buildings-icon-white.svg";
+import IdentityIcon from "../../public/icons/identities/identity-icon-white.svg";
+import PaperIconWhite from "../../public/icons/papers/paper-icon-white.svg";
+import TableIconWhite from "../../public/icons/tables/table-icon-white.svg";
+import GridButtons, { ButtonGrid } from "@/components/Buttons/GridButtons";
 
 const CompanyMenuPage: React.FC = () => {
   const [searchValue, setSearchValue] = useState("");
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const buttonsNavigation: ButtonGrid[] = [
     {
-      action: () => navigate("/company-registration"),
+      action: () => router.push("/company-registration"),
       icon: BuildIconWhite,
       id: "1",
       text: "Cadastrar Empresa",
     },
     {
-      action: () => navigate("/contact-registration"),
+      action: () => router.push("/contact-registration"),
       icon: IdentityIcon,
       id: "2",
       text: "Cadastrar Contato",
     },
     {
-      action: () => navigate("/agreement-registration"),
+      action: () => router.push("/agreement-registration"),
       icon: PaperIconWhite,
       id: "3",
       text: "Cadastrar Contrato",
     },
     {
-      action: () => navigate("/companies-list-register"),
+      action: () => router.push("/companies-list-register"),
       icon: TableIconWhite,
       id: "4",
       text: "Visualizar Registros",

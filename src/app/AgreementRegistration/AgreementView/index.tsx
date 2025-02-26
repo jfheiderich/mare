@@ -1,15 +1,17 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import "./styles.scss";
-import Title from "components/Texts/Title";
-import Layout from "components/Layouts/Layout";
-import { useNavigate } from "react-router-dom";
-import LabelWithValue from "components/Texts/LabelWithValue";
-import { useContactRegister } from "hooks/useContactRegister";
-import { useAgreementRegister } from "hooks/useAgreementRegister";
-import { IAgreementRegister } from "types/agreementRegister";
+import Image from "next/image";
+import Title from "@/components/Texts/Title";
+import Layout from "@/components/Layouts/Layout";
+import { useParams, useRouter } from "next/navigation";
+import LabelWithValue from "@/components/Texts/LabelWithValue";
+import { useContactRegister } from "@/hooks/useContactRegister";
+import { useAgreementRegister } from "@/hooks/useAgreementRegister";
+import { IAgreementRegister } from "@/types/agreementRegister";
 
 const AgreementViewPage: React.FC = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { setAgreementRegister, agreementRegister } = useAgreementRegister();
 
   const [agreementData, setAgreementData] = useState<IAgreementRegister>(

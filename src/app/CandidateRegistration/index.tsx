@@ -1,26 +1,28 @@
+"use client";
 import React, { useRef, useState } from "react";
 import "./styles.scss";
-import Layout from "components/Layouts/Layout";
-import InputText from "components/Inputs/InputText";
+import Image from "next/image";
+import Layout from "@/components/Layouts/Layout";
+import InputText from "@/components/Inputs/InputText";
 import { getSearchAddressByCEP } from "api/getSearchApi";
-import Title from "components/Texts/Title";
-import Button from "components/Buttons/Button";
-import { useNavigate } from "react-router-dom";
-import CloseIconRed from "assets/icons/closes/close-icon-red-blood.svg";
+import Title from "@/components/Texts/Title";
+import Button from "@/components/Buttons/Button";
+import { useParams, useRouter } from "next/navigation";
+import CloseIconRed from "../../public/icons/closes/close-icon-red-blood.svg";
 import InputTextSelect, {
   IOptionInputTextSelectProps,
-} from "components/Inputs/InputTextSelect";
-import STATES from "mocks/states";
-import PCD from "mocks/pcd";
-import GENDERS from "mocks/gender";
-import RACES from "mocks/race";
-import EDUCATION from "mocks/education";
-import EXPERIENCE from "mocks/experience";
-import { useCandidateRegister } from "hooks/userCandidateRegister";
-import { Experience } from "types/experience";
+} from "@/components/Inputs/InputTextSelect";
+import STATES from "@/mocks/states";
+import PCD from "@/mocks/pcd";
+import GENDERS from "@/mocks/gender";
+import RACES from "@/mocks/race";
+import EDUCATION from "@/mocks/education";
+import EXPERIENCE from "@/mocks/experience";
+import { useCandidateRegister } from "@/hooks/userCandidateRegister";
+import { Experience } from "@/types/experience";
 
 const CandidateRegistrationPage: React.FC = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const formRef = useRef<HTMLElement | null>(null);
 
   const { setCandidateRegister } = useCandidateRegister();
@@ -126,7 +128,7 @@ const CandidateRegistrationPage: React.FC = () => {
 
       setCandidateRegister(prepareData);
 
-      navigate("/candidate-register");
+      router.push("/candidate-register");
       return;
     }
 
@@ -372,7 +374,9 @@ const CandidateRegistrationPage: React.FC = () => {
                         <li key={index} className="list-experience__li">
                           <span className="li__text">{experience.role}</span>
                           <span className="li__text">{experience.time}</span>
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             onClick={() => deleteExperience(experience)}
                             src={CloseIconRed}
                             alt="close icon"

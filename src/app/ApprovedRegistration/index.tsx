@@ -1,27 +1,29 @@
+"use client";
 import React, { useRef, useState } from "react";
 import "./styles.scss";
-import Title from "components/Texts/Title";
-import Layout from "components/Layouts/Layout";
-import { useNavigate } from "react-router-dom";
-import InputText from "components/Inputs/InputText";
-import Button from "components/Buttons/Button";
-import { Experience } from "types/experience";
+import Image from "next/image";
+import Title from "@/components/Texts/Title";
+import Layout from "@/components/Layouts/Layout";
+import { useParams, useRouter } from "next/navigation";
+import InputText from "@/components/Inputs/InputText";
+import Button from "@/components/Buttons/Button";
+import { Experience } from "@/types/experience";
 import InputTextSelect, {
   IOptionInputTextSelectProps,
-} from "components/Inputs/InputTextSelect";
-import STATES from "mocks/states";
-import { getSearchAddressByCEP } from "api/getSearchApi";
-import MARITAL_STATUS from "mocks/maritalStatus";
-import PCD from "mocks/pcd";
-import GENDERS from "mocks/gender";
-import RACES from "mocks/race";
-import EDUCATION from "mocks/education";
-import EXPERIENCE from "mocks/experience";
-import CloseIconRed from "assets/icons/closes/close-icon-red-blood.svg";
-import { useApprovedRegister } from "hooks/useApprovedRegister";
+} from "@/components/Inputs/InputTextSelect";
+import STATES from "@/mocks/states";
+import { getSearchAddressByCEP } from "@/api/getSearchApi";
+import MARITAL_STATUS from "@/mocks/maritalStatus";
+import PCD from "@/mocks/pcd";
+import GENDERS from "@/mocks/gender";
+import RACES from "@/mocks/race";
+import EDUCATION from "@/mocks/education";
+import EXPERIENCE from "@/mocks/experience";
+import CloseIconRed from "../../public/icons/closes/close-icon-red-blood.svg";
+import { useApprovedRegister } from "@/hooks/useApprovedRegister";
 
 const ApprovedRegistrationPage: React.FC = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { setApprovedRegister } = useApprovedRegister();
   const formRef = useRef<HTMLElement | null>(null);
   const [registerStep, setRegisterStep] = useState(1);
@@ -169,7 +171,7 @@ const ApprovedRegistrationPage: React.FC = () => {
 
       setApprovedRegister(prepareData);
 
-      navigate("/approved-registration-view");
+      router.push("/approved-registration-view");
     }
 
     setRegisterStep((prev) => prev + 1);
@@ -517,7 +519,9 @@ const ApprovedRegistrationPage: React.FC = () => {
                         <li key={index} className="list-experience__li">
                           <span className="li__text">{experience.role}</span>
                           <span className="li__text">{experience.time}</span>
-                          <img
+                          <Image
+                            width={100}
+                            height={100}
                             onClick={() => deleteExperience(experience)}
                             src={CloseIconRed}
                             alt="close icon"

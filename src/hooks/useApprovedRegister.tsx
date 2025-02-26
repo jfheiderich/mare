@@ -1,5 +1,6 @@
+"use client";
 import { createContext, useState, ReactNode, useContext } from "react";
-import { IApprovedRegister } from "types/approvedRegister";
+import { IApprovedRegister } from "@/types/approvedRegister";
 
 interface ApprovedRegisterContextProps {
   setApprovedRegister: (agreement: IApprovedRegister) => void;

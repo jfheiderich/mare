@@ -1,17 +1,19 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import "./styles.scss";
-import { useNavigate } from "react-router-dom";
-import whiteWaves from "../../assets/icons/oceanLines/ocean-lines.opacity.svg";
-import Title from "components/Texts/Title";
-import Button from "components/Buttons/Button";
+import Image from "next/image";
+import { useParams, useRouter } from "next/navigation";
+import whiteWaves from "../../public/icons/oceanLines/ocean-lines.opacity.svg";
+import Title from "@/components/Texts/Title";
+import Button from "@/components/Buttons/Button";
 
 const NotFoundPage: React.FC = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <section className={`not-found-page`}>
       <div className="not-found-page__logo-container">
-        <img src={whiteWaves} alt="Mare logo" />
+        <Image width={100} height={100} src={whiteWaves} alt="Mare logo" />
       </div>
       <Title
         size="h1"
@@ -21,7 +23,7 @@ const NotFoundPage: React.FC = () => {
       <Button
         buttonStyle="primary"
         buttonText="Voltar para Mare"
-        onClick={() => navigate("/home")}
+        onClick={() => router.push("/home")}
         className="not-found-page__button-back"
       />
     </section>

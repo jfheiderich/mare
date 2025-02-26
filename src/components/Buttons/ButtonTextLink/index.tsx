@@ -1,7 +1,9 @@
+"use client";
 import React from "react";
 import "./styles.scss";
-import { useNavigate } from "react-router-dom";
-import chevronLeftIcon from "assets/icons/chevrons/chevron-right-dark-ocean-blue.svg";
+import Image from "next/image";
+import { useParams, useRouter } from "next/navigation";
+import chevronLeftIcon from "../../public/icons/chevrons/chevron-right-dark-ocean-blue.svg";
 
 interface ButtonTextLinkProps {
   className?: string;
@@ -25,15 +27,15 @@ const ButtonTextLink: React.FC<ButtonTextLinkProps> = (props) => {
     isDisabled,
     alignTo,
   } = props;
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const clickHandler = () => {
     if (onClick) {
       onClick();
     } else if (routeTo) {
-      navigate(routeTo);
+      router.push(routeTo);
     } else if (!routeTo && isBackButton) {
-      navigate(-1);
+      router.push(-1);
     }
   };
 
@@ -50,7 +52,12 @@ const ButtonTextLink: React.FC<ButtonTextLinkProps> = (props) => {
       disabled={isDisabled}
     >
       {isBackButton ? (
-        <img src={chevronLeftIcon} alt="chevron left icon" />
+        <Image
+          width={100}
+          height={100}
+          src={chevronLeftIcon}
+          alt="chevron left icon"
+        />
       ) : (
         false
       )}

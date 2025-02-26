@@ -1,5 +1,6 @@
+"use client";
 import { createContext, useState, ReactNode, useContext } from "react";
-import { IContactRegister } from "types/contactRegister";
+import { IContactRegister } from "@/types/contactRegister";
 
 interface ContactRegisterContextProps {
   setContactRegister: (contact: IContactRegister) => void;

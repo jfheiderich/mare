@@ -1,20 +1,21 @@
 import React, { useState } from "react";
 import "./styles.scss";
-import Layout from "components/Layouts/Layout";
-import Title from "components/Texts/Title";
-import Paragraph from "components/Texts/Paragraph";
-import InputText from "components/Inputs/InputText";
-import Button from "components/Buttons/Button";
-import ButtonTextLink from "components/Buttons/ButtonTextLink";
-import { useNavigate } from "react-router-dom";
-import OpenedEye from "assets/icons/eyes/opened-eye-icon-green.svg";
-import ClosedEye from "assets/icons/eyes/closed-eye-icon-green.svg";
-import { useToast } from "hooks/useToast";
+import Image from "next/image";
+import Layout from "@/components/Layouts/Layout";
+import Title from "@/components/Texts/Title";
+import Paragraph from "@/components/Texts/Paragraph";
+import InputText from "@/components/Inputs/InputText";
+import Button from "@/components/Buttons/Button";
+import ButtonTextLink from "@/components/Buttons/ButtonTextLink";
+import { useParams, useRouter } from "next/navigation";
+import OpenedEye from "../../public/icons/eyes/opened-eye-icon-green.svg";
+import ClosedEye from "../../public/icons/eyes/closed-eye-icon-green.svg";
+import { useToast } from "@/hooks/useToast";
 import { validateEmail } from "utils/validates";
 import LOGIN from "api/user/login";
-import Loading from "components/Loading";
-import { useUserInfo } from "hooks/userInfo";
-import { IUserInfo } from "types/userInfo";
+import Loading from "@/components/Loading";
+import { useUserInfo } from "@/hooks/userInfo";
+import { IUserInfo } from "@/types/userInfo";
 
 const CompanyLoginPage: React.FC = () => {
   const [companyEmail, setCompanyEmail] = useState("");
@@ -26,7 +27,7 @@ const CompanyLoginPage: React.FC = () => {
 
   const { showToast } = useToast();
 
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const loginHandler = async () => {
     if (isLoading) return;
@@ -60,7 +61,7 @@ const CompanyLoginPage: React.FC = () => {
           setUserInfo("@mare_user_id", user?.id ?? "");
           setUserInfo("@mare_user_role", user?.role ?? "");
 
-          navigate("/home");
+          router.push("/home");
 
           break;
 

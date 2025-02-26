@@ -1,12 +1,14 @@
+"use client";
 import React from "react";
 import "./styles.scss";
-import Title from "components/Texts/Title";
-import Paragraph from "components/Texts/Paragraph";
-import Layout from "components/Layouts/Layout";
-import { useNavigate } from "react-router-dom";
+import Image from "next/image";
+import Title from "@/components/Texts/Title";
+import Paragraph from "@/components/Texts/Paragraph";
+import Layout from "@/components/Layouts/Layout";
+import { useParams, useRouter } from "next/navigation";
 
 const HomePage: React.FC = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   return (
     <Layout className="home-page" hasNavbar hasToolBar>

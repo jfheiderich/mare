@@ -1,24 +1,26 @@
 import React, { ReactNode, useEffect, useState } from "react";
 import "./styles.scss";
-import LinesWaves from "assets/icons/oceanLines/wave-logo.svg";
-import SeaWave from "assets/icons/oceanLines/sea-calm-wave.svg";
-import SeaWaveParable from "assets/icons/oceanLines/sea-wave-parable.svg";
-import Toolbar, { ToolbarButton } from "components/Toolbar";
-import BuildingIconBlack from "assets/icons/buildings/buildings-icon-black.svg";
-import BuildingIconGreen from "assets/icons/buildings/buildings-icon-green-dark.svg";
-import WalletIcon from "assets/icons/wallets/wallet-icon-black.svg";
-import ProfileIcon from "assets/icons/profiles/person-icon-black.svg";
-import { useNavigate } from "react-router-dom";
-import Title from "components/Texts/Title";
-import ButtonTextLink from "components/Buttons/ButtonTextLink";
-import HomeIcon from "assets/icons/home/home-icon-black.svg";
-import TableIcon from "assets/icons/tables/table-icon-black.svg";
-import Paragraph from "components/Texts/Paragraph";
-import InstagramIcon from "assets/icons/socialMedias/instagram-icon-white.svg";
-import LinkedinIcon from "assets/icons/socialMedias/linkedIn-icon-white.svg";
-import WhatsAppIcon from "assets/icons/socialMedias/whatsapp-icon-white.svg";
-import ChevronDown from "assets/icons/chevrons/chevron-down-dark-blue.svg";
-import FooterWave from "assets/icons/oceanLines/footer-wave.png";
+import Image from "next/image";
+import LinesWaves from "../../../../public/icons/oceanLines/wave-logo.svg";
+import SeaWave from "../../../../public/icons/oceanLines/sea-calm-wave.svg";
+import SeaWaveParable from "../../../../public/icons/oceanLines/sea-wave-parable.svg";
+import Toolbar, { ToolbarButton } from "@/components/Toolbar";
+import BuildingIconBlack from "../../../../public/icons/buildings/buildings-icon-black.svg";
+import BuildingIconGreen from "../../../../public/icons/buildings/buildings-icon-green-dark.svg";
+import WalletIcon from "../../../../public/icons/wallets/wallet-icon-black.svg";
+import ProfileIcon from "../../../../public/icons/profiles/person-icon-black.svg";
+import { useParams, useRouter } from "next/navigation";
+import Title from "@/components/Texts/Title";
+import ButtonTextLink from "@/components/Buttons/ButtonTextLink";
+import HomeIcon from "../../../../public/icons/home/home-icon-black.svg";
+import TableIcon from "../../../../public/icons/tables/table-icon-black.svg";
+import Paragraph from "@/components/Texts/Paragraph";
+import InstagramIcon from "../../../../public/icons/socialMedias/instagram-icon-white.svg";
+import LinkedinIcon from "../../../../public/icons/socialMedias/linkedIn-icon-white.svg";
+import WhatsAppIcon from "../../../../public/icons/socialMedias/whatsapp-icon-white.svg";
+import ChevronDown from "../../../../public/icons/chevrons/chevron-down-dark-blue.svg";
+import FooterWave from "../../../../public/icons/oceanLines/footer-wave.png";
+
 interface LayoutProps {
   className?: string;
   children: ReactNode;
@@ -56,7 +58,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
     loginCandidate,
   } = props;
 
-  const navigate = useNavigate();
+  const router = useRouter();
   const [isOpenLoginDropDown, setIsOpenLoginDropDown] = useState(false);
 
   useEffect(() => {
@@ -137,7 +139,12 @@ const Layout: React.FC<LayoutProps> = (props) => {
               <span className="text-wrapper__bold">MARE</span> Conecta
             </p>
             <figure className="navbar__logo-wrapper">
-              <img src={LinesWaves} alt="ondas azuis" />
+              <Image
+                width={100}
+                height={100}
+                src={LinesWaves}
+                alt="ondas azuis"
+              />
             </figure>
 
             <div className="navbar__login-wrapper">
@@ -151,7 +158,12 @@ const Layout: React.FC<LayoutProps> = (props) => {
                     isOpenLoginDropDown ? "upside-down" : ""
                   }`}
                 >
-                  <img src={ChevronDown} alt="seta para baixo" />
+                  <Image
+                    width={100}
+                    height={100}
+                    src={ChevronDown}
+                    alt="seta para baixo"
+                  />
                 </span>
               </button>
               {isOpenLoginDropDown ? (
@@ -182,7 +194,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
           <nav className="layout-component__page-title margin-vert-16">
             {pageTitleDetails().icon &&
             typeof pageTitleDetails().text === "string" ? (
-              <img
+              <Image width={100} height={100} 
                 src={pageTitleDetails().icon}
                 alt={pageTitleDetails().text}
                 className="page-title__icon margin-left-24"
@@ -198,7 +210,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
               className="margin-right-24 button-link"
               onClick={() => {
                 if (!isBackButton && backButtonLink) {
-                  navigate(backButtonLink);
+                  router.push(backButtonLink);
                 }
               }}
             />
@@ -224,7 +236,9 @@ const Layout: React.FC<LayoutProps> = (props) => {
               {hasFooterContacts ? (
                 <div className="footer__social-medias">
                   <span className="social-medias__icon-text-wrapper">
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       src={InstagramIcon}
                       alt="Instagram logo"
                       className="icon-text-wrapper__icon"
@@ -232,7 +246,9 @@ const Layout: React.FC<LayoutProps> = (props) => {
                     <p className="icon-text-wrapper__text">/mareconecta</p>
                   </span>
                   <span className="social-medias__icon-text-wrapper">
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       src={LinkedinIcon}
                       alt="LinkedIn logo"
                       className="icon-text-wrapper__icon"
@@ -240,7 +256,9 @@ const Layout: React.FC<LayoutProps> = (props) => {
                     <p className="icon-text-wrapper__text">/mareconecta</p>
                   </span>
                   <span className="social-medias__icon-text-wrapper">
-                    <img
+                    <Image
+                      width={100}
+                      height={100}
                       src={WhatsAppIcon}
                       alt="whatsApp logo"
                       className="icon-text-wrapper__icon"
@@ -255,7 +273,12 @@ const Layout: React.FC<LayoutProps> = (props) => {
               )}
             </div>
 
-            <img src={FooterWave} alt="fundo azul em formato de onda" />
+            <Image
+              width={100}
+              height={100}
+              src={FooterWave}
+              alt="fundo azul em formato de onda"
+            />
 
             <p className="footer__rights-text">
               MARE Soluções. Todos os direitos reservados. Serra, ES - Brasil

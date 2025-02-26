@@ -1,6 +1,7 @@
 import React, { forwardRef, ReactNode } from "react";
 import "./styles.scss";
-import ArrowRight from "assets/icons/chevrons/chevron-right-dark-ocean-blue.svg";
+import Image from "next/image";
+import ArrowRight from "../../public/icons/chevrons/chevron-right-dark-ocean-blue.svg";
 
 interface ListItemLinkProps {
   className?: string;
@@ -57,7 +58,9 @@ const ListItemLink = forwardRef<HTMLDivElement, ListItemLinkProps>(
               isImageCircle ? "image-circle" : ""
             }`}
           >
-            <img
+            <Image
+              width={100}
+              height={100}
               src={imageLeft}
               alt="left icon"
               className={`item__left-icon ${iconFill ? "icon-fill" : ""}`}
@@ -84,7 +87,9 @@ const ListItemLink = forwardRef<HTMLDivElement, ListItemLinkProps>(
           </section>
         )}
 
-        {hasArrowRight && <img src={ArrowRight} alt="arrow-right" />}
+        {hasArrowRight && (
+          <Image width={100} height={100} src={ArrowRight} alt="arrow-right" />
+        )}
 
         {hasSeparator && <div className="separator" />}
       </div>

@@ -1,19 +1,21 @@
+"use client";
 import React, { useRef, useState } from "react";
 import "./styles.scss";
-import Title from "components/Texts/Title";
-import Paragraph from "components/Texts/Paragraph";
-import Layout from "components/Layouts/Layout";
-import { useNavigate } from "react-router-dom";
-import InputText from "components/Inputs/InputText";
-import Button from "components/Buttons/Button";
+import Image from "next/image";
+import Title from "@/components/Texts/Title";
+import Paragraph from "@/components/Texts/Paragraph";
+import Layout from "@/components/Layouts/Layout";
+import { useParams, useRouter } from "next/navigation";
+import InputText from "@/components/Inputs/InputText";
+import Button from "@/components/Buttons/Button";
 
-import { useContactRegister } from "hooks/useContactRegister";
-import Textarea from "components/TextAreas/Textarea";
-import { useCandidateManagement } from "hooks/useCandidateManagement";
+import { useContactRegister } from "@/hooks/useContactRegister";
+import Textarea from "@/components/TextAreas/Textarea";
+import { useCandidateManagement } from "@/hooks/useCandidateManagement";
 
 const CandidateManagementPage: React.FC = () => {
   const formRef = useRef<HTMLElement | null>(null);
-  const navigate = useNavigate();
+  const router = useRouter();
   const { setCandidateManagement } = useCandidateManagement();
 
   const [candidate, setCandidate] = useState({
@@ -71,7 +73,7 @@ const CandidateManagementPage: React.FC = () => {
 
     setCandidateManagement(candidate);
 
-    navigate("/candidate-management-view");
+    router.push("/candidate-management-view");
   };
 
   return (

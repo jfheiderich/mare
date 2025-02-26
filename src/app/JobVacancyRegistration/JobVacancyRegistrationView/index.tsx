@@ -1,14 +1,16 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import "./styles.scss";
-import Title from "components/Texts/Title";
-import Layout from "components/Layouts/Layout";
-import { useNavigate } from "react-router-dom";
-import LabelWithValue from "components/Texts/LabelWithValue";
-import { useJobVacancyRegister } from "hooks/useJobVacancyRegister";
-import { IJObVacancyRegister } from "types/jobVacancyRegister";
+import Image from "next/image";
+import Title from "@/components/Texts/Title";
+import Layout from "@/components/Layouts/Layout";
+import { useParams, useRouter } from "next/navigation";
+import LabelWithValue from "@/components/Texts/LabelWithValue";
+import { useJobVacancyRegister } from "@/hooks/useJobVacancyRegister";
+import { IJObVacancyRegister } from "@/types/jobVacancyRegister";
 
 const JobVacancyRegistrationViewPage: React.FC = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { jobVacancyRegister } = useJobVacancyRegister();
 
   const [jobVacancyData, setJobVacancyData] = useState<IJObVacancyRegister>(

@@ -1,13 +1,14 @@
 import React, { useState } from "react";
 import "./styles.scss";
-import Title from "components/Texts/Title";
-import Paragraph from "components/Texts/Paragraph";
-import Layout from "components/Layouts/Layout";
-import { useNavigate } from "react-router-dom";
-import InputText from "components/Inputs/InputText";
+import Image from "next/image";
+import Title from "@/components/Texts/Title";
+import Paragraph from "@/components/Texts/Paragraph";
+import Layout from "@/components/Layouts/Layout";
+import { useParams, useRouter } from "next/navigation";
+import InputText from "@/components/Inputs/InputText";
 
 const CandidateListRegisterPage: React.FC = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [searchList, setSearchList] = useState("");
 
   return (

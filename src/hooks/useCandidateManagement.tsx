@@ -1,5 +1,6 @@
+"use client";
 import React, { createContext, useState, ReactNode, useContext } from "react";
-import { ICandidateManagement } from "types/candidateManagement";
+import { ICandidateManagement } from "@/types/candidateManagement";
 
 interface CandidateManagementContextProps {
   setCandidateManagement: (company: ICandidateManagement) => void;

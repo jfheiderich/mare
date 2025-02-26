@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import "./styles.scss";
+import Image from "next/image";
 
 interface ButtonProps {
   className?: string;
@@ -34,9 +36,22 @@ const Button: React.FC<ButtonProps> = (props) => {
       onClick={onClick}
       disabled={isDisabled}
     >
-      {iconLeft ? <img src={iconLeft} alt="icon button left" /> : false}
+      {iconLeft ? (
+        <Image width={100} height={100} src={iconLeft} alt="icon button left" />
+      ) : (
+        false
+      )}
       <span className="button-component__text">{buttonText}</span>
-      {iconRight ? <img src={iconRight} alt="icon button right" /> : false}
+      {iconRight ? (
+        <Image
+          width={100}
+          height={100}
+          src={iconRight}
+          alt="icon button right"
+        />
+      ) : (
+        false
+      )}
     </button>
   );
 };

@@ -1,14 +1,16 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import "./styles.scss";
-import Title from "components/Texts/Title";
-import Layout from "components/Layouts/Layout";
-import { useNavigate } from "react-router-dom";
-import LabelWithValue from "components/Texts/LabelWithValue";
-import { useCandidateManagement } from "hooks/useCandidateManagement";
-import { ICandidateManagement } from "types/candidateManagement";
+import Image from "next/image";
+import Title from "@/components/Texts/Title";
+import Layout from "@/components/Layouts/Layout";
+import { useParams, useRouter } from "next/navigation";
+import LabelWithValue from "@/components/Texts/LabelWithValue";
+import { useCandidateManagement } from "@/hooks/useCandidateManagement";
+import { ICandidateManagement } from "@/types/candidateManagement";
 
 const CandidateRegistrationViewPage: React.FC = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { candidateManagement } = useCandidateManagement();
 
   const [candidateData, setCandidateData] = useState<ICandidateManagement>(

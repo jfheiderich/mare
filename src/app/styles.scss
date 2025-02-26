@@ -1,24 +1,71 @@
-.loading-page {
-  width: 100vw;
-  height: 100vh;
+.landing-page {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 1;
-  transition: opacity 1s ease-out;
+  flex-direction: column;
+}
 
-  &.hidden-fade-out {
-    opacity: 0;
-  }
+.landing-page-layout {
+  .landing-page-layout__main {
+    height: calc(100dvh - 226px);
+    overflow-y: scroll;
+    padding-top: 40px;
+    overflow-x: visible;
 
-  .loading-page__logo-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    [alt="Mare logo"] {
-      width: 100%;
-      height: auto;
-      max-width: 500px;
+    .main__introduce-text {
+      text-align: right;
+      max-width: 540px;
+      margin-left: auto;
+
+      b {
+        font-family: "Roboto Bold Condensed Italic";
+      }
+    }
+
+    .main__about-us-wrapper {
+      background-color: var(--mare-sea-dust);
+      padding: 16px 24px;
+      display: flex;
+      flex-direction: column;
+
+      gap: 16px;
+
+      .about-us-wrapper__title {
+        color: var(--mare-white);
+        font-family: "Roboto Bold";
+        font-size: 16px;
+        max-width: 540px;
+      }
+
+      .about-us-wrapper__paragraph {
+        color: var(--mare-white);
+        font-size: 14px;
+        max-width: 540px;
+      }
+    }
+
+    .main__explanation-card {
+      background-color: var(--mare-sea-light-blue);
+      padding: 16px 24px;
+
+      .wrapper__list-texts {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        margin-top: 16px;
+      }
+    }
+
+    .main__budget-contact {
+      display: grid;
+      padding: 16px 16px 40px 16px;
+
+      .budget-contact__paragraph {
+        justify-self: center;
+      }
+
+      .budget-contact__input {
+      }
     }
   }
 }

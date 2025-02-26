@@ -1,12 +1,14 @@
+"use client";
 import React, { useRef, useState } from "react";
 import "./styles.scss";
-import Title from "components/Texts/Title";
-import Layout from "components/Layouts/Layout";
-import { useNavigate } from "react-router-dom";
-import InputText from "components/Inputs/InputText";
-import Button from "components/Buttons/Button";
-import { useAgreementRegister } from "hooks/useAgreementRegister";
-import Textarea from "components/TextAreas/Textarea";
+import Image from "next/image";
+import Title from "@/components/Texts/Title";
+import Layout from "@/components/Layouts/Layout";
+import { useParams, useRouter } from "next/navigation";
+import InputText from "@/components/Inputs/InputText";
+import Button from "@/components/Buttons/Button";
+import { useAgreementRegister } from "@/hooks/useAgreementRegister";
+import Textarea from "@/components/TextAreas/Textarea";
 
 const AgreementRegistrationPage: React.FC = () => {
   const formRef = useRef<HTMLElement | null>(null);
@@ -46,7 +48,7 @@ const AgreementRegistrationPage: React.FC = () => {
     });
   };
 
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const validateStringObject = (object: Record<string, string>) => {
     const warningInputs = Object.entries(object)
@@ -80,7 +82,7 @@ const AgreementRegistrationPage: React.FC = () => {
 
     setAgreementRegister(agreementData);
 
-    navigate("/agreement-view");
+    router.push("/agreement-view");
   };
 
   return (

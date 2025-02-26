@@ -1,14 +1,16 @@
+"use client";
 import React, { useEffect, useState } from "react";
 import "./styles.scss";
-import Title from "components/Texts/Title";
-import Layout from "components/Layouts/Layout";
-import { useNavigate } from "react-router-dom";
-import LabelWithValue from "components/Texts/LabelWithValue";
-import { useContactRegister } from "hooks/useContactRegister";
-import { IContactRegister } from "types/contactRegister";
+import Image from "next/image";
+import Title from "@/components/Texts/Title";
+import Layout from "@/components/Layouts/Layout";
+import { useParams, useRouter } from "next/navigation";
+import LabelWithValue from "@/components/Texts/LabelWithValue";
+import { useContactRegister } from "@/hooks/useContactRegister";
+import { IContactRegister } from "@/types/contactRegister";
 
 const ContactViewPage: React.FC = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
   const { contactRegister, setContactRegister } = useContactRegister();
 
   const [contactData, setContactData] = useState<IContactRegister>(

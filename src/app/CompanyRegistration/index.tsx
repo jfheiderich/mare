@@ -1,17 +1,19 @@
+"use client";
 import React, { useRef, useState } from "react";
 import "./styles.scss";
-import Title from "components/Texts/Title";
-import Paragraph from "components/Texts/Paragraph";
-import Layout from "components/Layouts/Layout";
-import { useNavigate } from "react-router-dom";
-import InputText from "components/Inputs/InputText";
-import Button from "components/Buttons/Button";
-import { useCompanyRegister } from "hooks/useCompanyRegister";
+import Image from "next/image";
+import Title from "@/components/Texts/Title";
+import Paragraph from "@/components/Texts/Paragraph";
+import Layout from "@/components/Layouts/Layout";
+import { useParams, useRouter } from "next/navigation";
+import InputText from "@/components/Inputs/InputText";
+import Button from "@/components/Buttons/Button";
+import { useCompanyRegister } from "@/hooks/useCompanyRegister";
 import { getSearchAddressByCEP } from "api/getSearchApi";
-import STATES from "mocks/states";
+import STATES from "@/mocks/states";
 import InputTextSelect, {
   IOptionInputTextSelectProps,
-} from "components/Inputs/InputTextSelect";
+} from "@/components/Inputs/InputTextSelect";
 
 const CompanyRegistrationPage: React.FC = () => {
   const [registrationStep, setRegistrationStep] = useState(1);
@@ -70,7 +72,7 @@ const CompanyRegistrationPage: React.FC = () => {
     });
   };
 
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const validateStringObject = (object: Record<string, string>) => {
     const warningInputs = Object.entries(object)
@@ -122,7 +124,7 @@ const CompanyRegistrationPage: React.FC = () => {
       };
       setCompanyRegister(prepareData);
 
-      navigate("/company-view");
+      router.push("/company-view");
     }
 
     setRegistrationStep((prev) => prev + 1);

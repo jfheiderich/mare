@@ -1,9 +1,10 @@
 import React, { useRef, useState, useEffect } from "react";
 import "./styles.scss";
+import Image from "next/image";
 import InputText from "../InputText";
-import ListItemLink from "components/ListItemLink";
-import ArrowDown from "assets/icons/chevrons/chevron-down-dark-blue.svg";
-import ArrowUp from "assets/icons/chevrons/chevron-up-dark-blue.svg";
+import ListItemLink from "@/components/ListItemLink";
+import ArrowDown from "../../public/icons/chevrons/chevron-down-dark-blue.svg";
+import ArrowUp from "../../public/icons/chevrons/chevron-up-dark-blue.svg";
 
 interface InputTextSelectProps {
   className?: string;

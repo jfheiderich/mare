@@ -1,5 +1,6 @@
 import React, { ReactNode } from "react";
 import "./styles.scss";
+import Image from "next/image";
 
 interface TitleProps {
   className?: string;

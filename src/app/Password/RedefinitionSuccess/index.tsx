@@ -1,17 +1,19 @@
+"use client";
 import React from "react";
 import "./styles.scss";
-import Title from "components/Texts/Title";
-import Paragraph from "components/Texts/Paragraph";
-import Button from "components/Buttons/Button";
-import Layout from "components/Layouts/Layout";
-import ButtonTextLink from "components/Buttons/ButtonTextLink";
-import { useNavigate } from "react-router-dom";
+import Image from "next/image";
+import Title from "@/components/Texts/Title";
+import Paragraph from "@/components/Texts/Paragraph";
+import Button from "@/components/Buttons/Button";
+import Layout from "@/components/Layouts/Layout";
+import ButtonTextLink from "@/components/Buttons/ButtonTextLink";
+import { useParams, useRouter } from "next/navigation";
 
 const RedefinitionSuccessPage: React.FC = () => {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   const newLoginHandler = () => {
-    navigate("/company-login");
+    router.push("/company-login");
   };
 
   return (

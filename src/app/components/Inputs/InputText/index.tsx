@@ -1,5 +1,7 @@
+"use client";
 import React from "react";
 import "./styles.scss";
+import Image from "next/image";
 import VMasker from "vanilla-masker";
 
 interface InputTextProps {
@@ -66,7 +68,12 @@ const InputText: React.FC<InputTextProps> = (props) => {
       <div className="input-text__input-wrapper">
         {iconLeft ? (
           <div className="input-wrapper__icon-left-wrapper">
-            <img src={iconLeft} alt="input icon left" />
+            <Image
+              width={100}
+              height={100}
+              src={iconLeft}
+              alt="input icon left"
+            />
           </div>
         ) : (
           false
@@ -94,7 +101,9 @@ const InputText: React.FC<InputTextProps> = (props) => {
               iconRightClick ? "cursor-pointer" : ""
             }`}
           >
-            <img
+            <Image
+              width={100}
+              height={100}
               src={iconRight}
               alt="input icon right"
               onClick={iconRightClick}

@@ -1,3 +1,4 @@
+"use client";
 import {
   createContext,
   ReactNode,
@@ -27,7 +28,6 @@ const UseWindowWidthSizeProvider = ({ children }: { children: ReactNode }) => {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
 
   return (
     <UseWindowWidthSizeContext.Provider value={{ windowSize }}>
