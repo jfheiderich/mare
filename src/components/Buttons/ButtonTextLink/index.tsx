@@ -3,7 +3,7 @@ import React from "react";
 import "./styles.scss";
 import Image from "next/image";
 import { useParams, useRouter } from "next/navigation";
-import chevronLeftIcon from "../../public/icons/chevrons/chevron-right-dark-ocean-blue.svg";
+import chevronLeftIcon from "../../../../public/icons/chevrons/chevron-right-dark-ocean-blue.svg";
 
 interface ButtonTextLinkProps {
   className?: string;
@@ -35,7 +35,7 @@ const ButtonTextLink: React.FC<ButtonTextLinkProps> = (props) => {
     } else if (routeTo) {
       router.push(routeTo);
     } else if (!routeTo && isBackButton) {
-      router.push(-1);
+      router.back();
     }
   };
 

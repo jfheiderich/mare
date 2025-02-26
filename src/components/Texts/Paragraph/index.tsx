@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react";
+import React from "react";
 import "./styles.scss";
 import Image from "next/image";
 

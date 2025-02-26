@@ -141,7 +141,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
             <figure className="navbar__logo-wrapper">
               <Image
                 width={100}
-                height={100}
+                height={20}
                 src={LinesWaves}
                 alt="ondas azuis"
               />
@@ -159,8 +159,8 @@ const Layout: React.FC<LayoutProps> = (props) => {
                   }`}
                 >
                   <Image
-                    width={100}
-                    height={100}
+                    width={16}
+                    height={10}
                     src={ChevronDown}
                     alt="seta para baixo"
                   />
@@ -237,8 +237,8 @@ const Layout: React.FC<LayoutProps> = (props) => {
                 <div className="footer__social-medias">
                   <span className="social-medias__icon-text-wrapper">
                     <Image
-                      width={100}
-                      height={100}
+                      width={16}
+                      height={16}
                       src={InstagramIcon}
                       alt="Instagram logo"
                       className="icon-text-wrapper__icon"
@@ -247,8 +247,8 @@ const Layout: React.FC<LayoutProps> = (props) => {
                   </span>
                   <span className="social-medias__icon-text-wrapper">
                     <Image
-                      width={100}
-                      height={100}
+                      width={16}
+                      height={16}
                       src={LinkedinIcon}
                       alt="LinkedIn logo"
                       className="icon-text-wrapper__icon"
@@ -257,8 +257,8 @@ const Layout: React.FC<LayoutProps> = (props) => {
                   </span>
                   <span className="social-medias__icon-text-wrapper">
                     <Image
-                      width={100}
-                      height={100}
+                      width={16}
+                      height={16}
                       src={WhatsAppIcon}
                       alt="whatsApp logo"
                       className="icon-text-wrapper__icon"
@@ -275,7 +275,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
 
             <Image
               width={100}
-              height={100}
+              height={200}
               src={FooterWave}
               alt="fundo azul em formato de onda"
             />

@@ -1,15 +1,15 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import "./styles.scss";
+import LoadingStep1 from "../../../public/loading/loading-step1.svg";
+import LoadingStep2 from "../../../public/loading/loading-step2.svg";
+import LoadingStep3 from "../../../public/loading/loading-step3.svg";
+import LoadingStep4 from "../../../public/loading/loading-step4.svg";
+import LoadingStep5 from "../../../public/loading/loading-step5.svg";
+import LoadingStep6 from "../../../public/loading/loading-step6.svg";
+import LoadingStep7 from "../../../public/loading/loading-step7.svg";
+import LoadingStep8 from "../../../public/loading/loading-step8.svg";
 import Image from "next/image";
-import LoadingStep1 from "../../public/loading/loading-step1.svg";
-import LoadingStep2 from "../../public/loading/loading-step2.svg";
-import LoadingStep3 from "../../public/loading/loading-step3.svg";
-import LoadingStep4 from "../../public/loading/loading-step4.svg";
-import LoadingStep5 from "../../public/loading/loading-step5.svg";
-import LoadingStep6 from "../../public/loading/loading-step6.svg";
-import LoadingStep7 from "../../public/loading/loading-step7.svg";
-import LoadingStep8 from "../../public/loading/loading-step8.svg";
 
 interface LoadingProps {
   className?: string;
@@ -17,7 +17,7 @@ interface LoadingProps {
 
 const Loading: React.FC<LoadingProps> = (props) => {
   const { className } = props;
-  const [current<Image width={100} height={100} , setCurrent<Image width={100} height={100} ] = useState(0);
+  const [currentImg, setCurrentImg] = useState(0);
 
   const loopingLoading = [
     LoadingStep1,
@@ -33,7 +33,7 @@ const Loading: React.FC<LoadingProps> = (props) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrent<Image width={100} height={100} ((prev) => (prev + 1) % loopingLoading.length);
+      setCurrentImg((prev) => (prev + 1) % loopingLoading.length);
     }, 50);
 
     return () => clearInterval(interval);
@@ -41,7 +41,12 @@ const Loading: React.FC<LoadingProps> = (props) => {
 
   return (
     <div id="loading-component" className={className ?? ""}>
-      <Image width={100} height={100}  src={loopingLoading[current<Image width={100} height={100} ]} alt="loading" />
+      <Image
+        src={loopingLoading[currentImg]}
+        alt="loading"
+        width={24}
+        height={24}
+      />
     </div>
   );
 };
