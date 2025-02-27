@@ -162,7 +162,7 @@ const CompanyRegistrationPage: React.FC = () => {
 
   return (
     <Layout
-      className="company-registration-page"
+      className="company-registration-page padding-16"
       hasNavbar
       pageTitle="Contas"
       hasToolBar

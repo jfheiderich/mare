@@ -91,13 +91,13 @@ const ContactRegistrationPage: React.FC = () => {
 
   return (
     <Layout
-      className="contact-registration"
+      className="contact-registration padding-16"
       hasNavbar
       pageTitle="Contas"
       hasToolBar
     >
       <Title size="h2" text="Cadastrar Contato" />
-      <main className="contact-registration__form margin-top-16" ref={formRef}>
+      <main className="contact-registration__form" ref={formRef}>
         <div className="form__wrapper">
           <InputText
             onChange={(value) =>

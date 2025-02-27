@@ -1,9 +1,8 @@
 .company-view {
-  padding: 0 24px 24px 24px;
   .company-view__main {
     display: grid;
     gap: 16px;
-    height: calc(100dvh - 175px);
+    height: calc(100dvh - 208px);
     overflow-y: scroll;
     overflow-x: visible;
   }

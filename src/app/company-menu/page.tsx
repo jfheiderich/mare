@@ -1,16 +1,15 @@
 "use client";
 import React from "react";
 import "./styles.scss";
-import Image from "next/image";
 import Title from "@/components/Texts/Title";
 import Paragraph from "@/components/Texts/Paragraph";
-import { useParams, useRouter } from "next/navigation";
 import Layout from "@/components/Layouts/Layout/page";
+import { useRouter } from "next/navigation";
 import GridButtons, { ButtonGrid } from "@/components/Buttons/GridButtons/page";
 import BuildIconWhite from "../../../public/icons/buildings/buildings-icon-white.svg";
 import IdentityIcon from "../../../public/icons/identities/identity-icon-white.svg";
-import PeopleSquareWhite from "../../../public/icons/profiles/people-square-icon-white.svg";
-import WalletSimpleWhite from "../../../public/icons/wallets/wallet-simple-icon-white.svg";
+import PaperIconWhite from "../../../public/icons/papers/paper-icon-white.svg";
+import TableIconWhite from "../../../public/icons/tables/table-icon-white.svg";
 
 const HomePage: React.FC = () => {
   const router = useRouter();
@@ -29,16 +28,16 @@ const HomePage: React.FC = () => {
       text: "Cadastrar Contato",
     },
     {
-      action: () => router.push("/job-vacancy-registration"),
-      icon: WalletSimpleWhite,
+      action: () => router.push("/agreement-registration"),
+      icon: PaperIconWhite,
       id: "3",
-      text: "Cadastrar Vaga",
+      text: "Cadastrar Contrato",
     },
     {
       action: () => router.push("/company-list-register"),
-      icon: PeopleSquareWhite,
+      icon: TableIconWhite,
       id: "4",
-      text: "Gerenciar Candidato",
+      text: "Visualizar Registros",
     },
   ];
 

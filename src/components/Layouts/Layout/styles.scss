@@ -9,6 +9,7 @@
     width: 100dvw;
 
     .layout-component__navbar {
+      z-index: 100;
       background-color: var(--mare-white);
       overflow-x: visible;
       position: fixed;

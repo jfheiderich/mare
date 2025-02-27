@@ -9,7 +9,7 @@ import InputText from "@/components/Inputs/InputText/page";
 import Button from "@/components/Buttons/Button";
 import Textarea from "@/components/TextAreas/Textarea";
 import { useJobVacancyRegister } from "@/hooks/useJobVacancyRegister";
-import { getSearchAddressByCEP } from "api/getSearchApi";
+import { getSearchAddressByCEP } from "@/api/getSearchApi";
 import InputTextSelect, {
   IOptionInputTextSelectProps,
 } from "@/components/Inputs/InputTextSelect/page";
@@ -138,7 +138,8 @@ const JobVacancyRegistrationPage: React.FC = () => {
 
       setJobVacancyRegister(prepareData);
 
-      router.push("/job-vacancy-view");
+      router.push("/job-vacancy-registration/job-vacancy-view");
+      return;
     }
 
     setRegistrationStep((prev) => prev + 1);
@@ -176,7 +177,7 @@ const JobVacancyRegistrationPage: React.FC = () => {
 
   return (
     <Layout
-      className="job-vacancy"
+      className="job-vacancy padding-16"
       hasNavbar
       pageTitle="Processo Seletivo"
       hasToolBar

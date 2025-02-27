@@ -82,12 +82,12 @@ const AgreementRegistrationPage: React.FC = () => {
 
     setAgreementRegister(agreementData);
 
-    router.push("/agreement-view");
+    router.push("/agreement-registration/agreement-view");
   };
 
   return (
     <Layout
-      className="agreement-registration"
+      className="agreement-registration padding-16"
       hasNavbar
       pageTitle="Contas"
       hasToolBar

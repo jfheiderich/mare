@@ -28,7 +28,7 @@ const CandidateRegistrationViewPage: React.FC = () => {
       pageTitle="Processo Seletivo"
       hasToolBar
     >
-      <main className="candidate-registration__main margin-ver-16">
+      <main className="candidate-registration__main">
         <Title text={`Gestão do Candidato`} size="h2" />
 
         {Object.entries(candidateData).map(([key, value]) => {

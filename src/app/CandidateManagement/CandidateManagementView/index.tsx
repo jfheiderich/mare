@@ -24,7 +24,7 @@ const CandidateManagementView: React.FC = () => {
 
   return (
     <Layout className="company-view" hasNavbar pageTitle="Contas" hasToolBar>
-      <main className="company-view__main margin-ver-16">
+      <main className="company-view__main">
         <Title text={`Empresa: ${companyData.corporateName}`} size="h2" />
         {Object.entries(companyData).map(([key, value], index) => (
           <LabelWithValue key={key} labelText={key} valueText={value} />

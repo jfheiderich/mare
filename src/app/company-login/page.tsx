@@ -84,8 +84,6 @@ const CompanyLoginPage: React.FC = () => {
     }
   };
 
-  const loginPageHandler = () => {};
-
   if (isLoading) {
     return <Loading />;
   }
@@ -96,7 +94,6 @@ const CompanyLoginPage: React.FC = () => {
       hasFooter
       hasNavbar
       hasFooterContacts
-      loginCompany={loginPageHandler}
     >
       <main className="company-login-page__main">
         <Paragraph

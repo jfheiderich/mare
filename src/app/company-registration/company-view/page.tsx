@@ -3,9 +3,7 @@ import React, { useEffect, useState } from "react";
 import "./styles.scss";
 import Title from "@/components/Texts/Title";
 import Layout from "@/components/Layouts/Layout/page";
-import { useRouter } from "next/navigation";
 import LabelWithValue from "@/components/Texts/LabelWithValue";
-import { ICompanyRegister } from "@/types/companyRegister";
 import { useCompanyRegister } from "@/hooks/useCompanyRegister";
 
 interface CompanyData {
@@ -24,7 +22,6 @@ interface CompanyData {
 }
 
 const CompanyViewPage: React.FC = () => {
-  const router = useRouter();
   const { companyRegister } = useCompanyRegister();
 
   const [companyData, setCompanyData] = useState<CompanyData>(
@@ -51,8 +48,13 @@ const CompanyViewPage: React.FC = () => {
   }, []);
 
   return (
-    <Layout className="company-view" hasNavbar pageTitle="Contas" hasToolBar>
-      <main className="company-view__main margin-ver-16">
+    <Layout
+      className="company-view padding-16"
+      hasNavbar
+      pageTitle="Contas"
+      hasToolBar
+    >
+      <main className="company-view__main">
         <Title text={`Empresa: ${companyData?.["Nome Fantasia"]}`} size="h2" />
         {Object.entries(companyData).map(([key, value], index) => (
           <LabelWithValue key={key} labelText={key} valueText={value} />

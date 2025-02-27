@@ -1,6 +1,8 @@
 #input-text {
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 0;
 
   &.input-text-class {
     margin: 0 4px;

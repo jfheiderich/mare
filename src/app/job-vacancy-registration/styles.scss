@@ -1,16 +1,20 @@
-.agreement-registration {
-  padding: 24px;
-  height: calc(100dvh - 220px);
+.job-vacancy {
+  height: calc(100dvh - 208px);
   overflow-y: scroll;
   overflow-x: visible;
-  .agreement-registration__form {
+  .job-vacancy__form {
     .form__wrapper {
       display: grid;
       gap: 16px;
 
       .wrapper__grid-template {
         display: grid;
+        grid-template-columns: 29.5% 1fr;
+        gap: 16px;
+      }
+      .wrapper__grid-template--modified {
         grid-template-columns: 1fr 1fr;
+        display: grid;
         gap: 16px;
       }
     }
