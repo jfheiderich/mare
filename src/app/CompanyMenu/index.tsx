@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./styles.scss";
 import Image from "next/image";
-import Layout from "@/components/Layouts/Layout";
+import Layout from "@/components/Layouts/Layout/page";
 import { useParams, useRouter } from "next/navigation";
-import InputText from "@/components/Inputs/InputText";
+import InputText from "@/components/Inputs/InputText/page";
 import BuildIconWhite from "../../public/icons/buildings/buildings-icon-white.svg";
 import IdentityIcon from "../../public/icons/identities/identity-icon-white.svg";
 import PaperIconWhite from "../../public/icons/papers/paper-icon-white.svg";
 import TableIconWhite from "../../public/icons/tables/table-icon-white.svg";
-import GridButtons, { ButtonGrid } from "@/components/Buttons/GridButtons";
+import GridButtons, { ButtonGrid } from "@/components/Buttons/GridButtons/page";
 
 const CompanyMenuPage: React.FC = () => {
   const [searchValue, setSearchValue] = useState("");

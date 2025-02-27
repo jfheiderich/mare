@@ -22,8 +22,6 @@
   }
 
   .input-text__input-wrapper {
-    position: relative;
-
     .input-wrapper__input {
       display: flex;
       width: calc(100% - 32px);
@@ -46,17 +44,11 @@
       }
     }
 
-    .input-wrapper__icon-left-wrapper {
-      [alt="input icon left"] {
-        height: 24px;
-      }
-    }
-
     .input-wrapper__icon-right-wrapper {
       position: absolute;
       right: 16px;
-      top: 50%;
-      transform: translateY(-50%);
+      top: 48px;
+
       display: flex;
       align-items: center;
 

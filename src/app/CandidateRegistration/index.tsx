@@ -2,8 +2,8 @@
 import React, { useRef, useState } from "react";
 import "./styles.scss";
 import Image from "next/image";
-import Layout from "@/components/Layouts/Layout";
-import InputText from "@/components/Inputs/InputText";
+import Layout from "@/components/Layouts/Layout/page";
+import InputText from "@/components/Inputs/InputText/page";
 import { getSearchAddressByCEP } from "api/getSearchApi";
 import Title from "@/components/Texts/Title";
 import Button from "@/components/Buttons/Button";
@@ -11,7 +11,7 @@ import { useParams, useRouter } from "next/navigation";
 import CloseIconRed from "../../public/icons/closes/close-icon-red-blood.svg";
 import InputTextSelect, {
   IOptionInputTextSelectProps,
-} from "@/components/Inputs/InputTextSelect";
+} from "@/components/Inputs/InputTextSelect/page";
 import STATES from "@/mocks/states";
 import PCD from "@/mocks/pcd";
 import GENDERS from "@/mocks/gender";

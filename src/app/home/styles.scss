@@ -1,0 +1,9 @@
+.home-page {
+  .home-page__main {
+    overflow-y: scroll;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    height: calc(100dvh - 200px);
+  }
+}

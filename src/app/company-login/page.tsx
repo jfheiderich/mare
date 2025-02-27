@@ -2,10 +2,10 @@
 import React, { useState } from "react";
 import "./styles.scss";
 import Image from "next/image";
-import Layout from "@/components/Layouts/Layout";
+import Layout from "@/components/Layouts/Layout/page";
 import Title from "@/components/Texts/Title";
 import Paragraph from "@/components/Texts/Paragraph";
-import InputText from "@/components/Inputs/InputText";
+import InputText from "@/components/Inputs/InputText/page";
 import Button from "@/components/Buttons/Button";
 import ButtonTextLink from "@/components/Buttons/ButtonTextLink";
 import { useParams, useRouter } from "next/navigation";

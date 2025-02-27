@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import "./styles.scss";
 import Image from "next/image";
-import Layout from "@/components/Layouts/Layout";
+import Layout from "@/components/Layouts/Layout/page";
 import { useParams, useRouter } from "next/navigation";
-import InputText from "@/components/Inputs/InputText";
+import InputText from "@/components/Inputs/InputText/page";
 import TableIconWhite from "../../public/icons/tables/table-icon-white.svg";
-import GridButtons, { ButtonGrid } from "@/components/Buttons/GridButtons";
+import GridButtons, { ButtonGrid } from "@/components/Buttons/GridButtons/page";
 import WalletSimpleWhite from "../../public/icons/wallets/wallet-simple-icon-white.svg";
 import PersonSquareWhite from "../../public/icons/profiles/person-square-icon-white.svg";
 import PeopleSquareWhite from "../../public/icons/profiles/people-square-icon-white.svg";

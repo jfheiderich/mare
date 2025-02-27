@@ -4,7 +4,7 @@ import "./styles.scss";
 import Image from "next/image";
 import Title from "@/components/Texts/Title";
 import Paragraph from "@/components/Texts/Paragraph";
-import Layout from "@/components/Layouts/Layout";
+import Layout from "@/components/Layouts/Layout/page";
 import { useParams, useRouter } from "next/navigation";
 import LabelWithValue from "@/components/Texts/LabelWithValue";
 import { ICompanyRegister } from "@/types/companyRegister";

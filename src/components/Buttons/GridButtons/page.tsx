@@ -28,8 +28,8 @@ const GridButtons: React.FC<GridButtonsProps> = (props) => {
         >
           <div className="button__icon">
             <Image
-              width={100}
-              height={100}
+              width={30}
+              height={30}
               src={btn.icon}
               alt={btn.text}
               className="icon__icon"

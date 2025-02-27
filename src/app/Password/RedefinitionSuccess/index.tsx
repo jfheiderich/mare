@@ -5,7 +5,7 @@ import Image from "next/image";
 import Title from "@/components/Texts/Title";
 import Paragraph from "@/components/Texts/Paragraph";
 import Button from "@/components/Buttons/Button";
-import Layout from "@/components/Layouts/Layout";
+import Layout from "@/components/Layouts/Layout/page";
 import ButtonTextLink from "@/components/Buttons/ButtonTextLink";
 import { useParams, useRouter } from "next/navigation";
 

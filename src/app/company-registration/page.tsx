@@ -1,19 +1,17 @@
 "use client";
 import React, { useRef, useState } from "react";
 import "./styles.scss";
-import Image from "next/image";
 import Title from "@/components/Texts/Title";
-import Paragraph from "@/components/Texts/Paragraph";
-import Layout from "@/components/Layouts/Layout";
-import { useParams, useRouter } from "next/navigation";
-import InputText from "@/components/Inputs/InputText";
+import Layout from "@/components/Layouts/Layout/page";
+import { useRouter } from "next/navigation";
+import InputText from "@/components/Inputs/InputText/page";
 import Button from "@/components/Buttons/Button";
 import { useCompanyRegister } from "@/hooks/useCompanyRegister";
-import { getSearchAddressByCEP } from "api/getSearchApi";
+import { getSearchAddressByCEP } from "@/api/getSearchApi";
 import STATES from "@/mocks/states";
 import InputTextSelect, {
   IOptionInputTextSelectProps,
-} from "@/components/Inputs/InputTextSelect";
+} from "@/components/Inputs/InputTextSelect/page";
 
 const CompanyRegistrationPage: React.FC = () => {
   const [registrationStep, setRegistrationStep] = useState(1);
@@ -124,7 +122,8 @@ const CompanyRegistrationPage: React.FC = () => {
       };
       setCompanyRegister(prepareData);
 
-      router.push("/company-view");
+      router.push("/company-registration/company-view");
+      return;
     }
 
     setRegistrationStep((prev) => prev + 1);

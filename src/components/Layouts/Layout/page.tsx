@@ -2,19 +2,14 @@ import React, { ReactNode, useEffect, useState } from "react";
 import "./styles.scss";
 import Image from "next/image";
 import LinesWaves from "../../../../public/icons/oceanLines/wave-logo.svg";
-import SeaWave from "../../../../public/icons/oceanLines/sea-calm-wave.svg";
-import SeaWaveParable from "../../../../public/icons/oceanLines/sea-wave-parable.svg";
-import Toolbar, { ToolbarButton } from "@/components/Toolbar";
+import Toolbar, { ToolbarButton } from "@/components/Toolbar/page";
 import BuildingIconBlack from "../../../../public/icons/buildings/buildings-icon-black.svg";
 import BuildingIconGreen from "../../../../public/icons/buildings/buildings-icon-green-dark.svg";
 import WalletIcon from "../../../../public/icons/wallets/wallet-icon-black.svg";
 import ProfileIcon from "../../../../public/icons/profiles/person-icon-black.svg";
-import { useParams, useRouter } from "next/navigation";
-import Title from "@/components/Texts/Title";
-import ButtonTextLink from "@/components/Buttons/ButtonTextLink";
+import { useRouter } from "next/navigation";
 import HomeIcon from "../../../../public/icons/home/home-icon-black.svg";
 import TableIcon from "../../../../public/icons/tables/table-icon-black.svg";
-import Paragraph from "@/components/Texts/Paragraph";
 import InstagramIcon from "../../../../public/icons/socialMedias/instagram-icon-white.svg";
 import LinkedinIcon from "../../../../public/icons/socialMedias/linkedIn-icon-white.svg";
 import WhatsAppIcon from "../../../../public/icons/socialMedias/whatsapp-icon-white.svg";
@@ -37,9 +32,6 @@ interface LayoutProps {
     | "Perfil"
     | "Visualizar Registros"
     | undefined;
-
-  loginCompany?: () => void;
-  loginCandidate?: () => void;
 }
 
 const Layout: React.FC<LayoutProps> = (props) => {
@@ -50,12 +42,10 @@ const Layout: React.FC<LayoutProps> = (props) => {
     hasNavbar,
     hasToolBar,
     pageTitle,
-    loginCompany,
     isBackButton,
     backButtonLink,
     hasFooterContacts,
     backButtonText,
-    loginCandidate,
   } = props;
 
   const router = useRouter();
@@ -92,6 +82,12 @@ const Layout: React.FC<LayoutProps> = (props) => {
     },
   ];
 
+  const loginCompany = () => {
+    router.push("/company-login");
+  };
+
+  const loginCandidate = () => {};
+
   const pageTitleDetails = () => {
     switch (pageTitle) {
       case "Contas":
@@ -112,11 +108,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
     {
       id: "1",
       text: "Sou empresa",
-      action: () => {
-        if (loginCompany) {
-          loginCompany();
-        }
-      },
+      action: () => loginCompany(),
     },
     {
       id: "2",
@@ -133,7 +125,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
   return (
     <div id="layout-component">
       <div className="layout-component-wrapper">
-        {hasNavbar && loginCompany ? (
+        {hasNavbar ? (
           <nav className="layout-component__navbar">
             <p className="navbar__text-wrapper">
               <span className="text-wrapper__bold">MARE</span> Conecta

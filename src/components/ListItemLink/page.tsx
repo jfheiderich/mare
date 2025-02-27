@@ -1,7 +1,7 @@
 import React, { forwardRef, ReactNode } from "react";
 import "./styles.scss";
 import Image from "next/image";
-import ArrowRight from "../../public/icons/chevrons/chevron-right-dark-ocean-blue.svg";
+import ArrowRight from "../../../public/icons/chevrons/chevron-right-dark-ocean-blue.svg";
 
 interface ListItemLinkProps {
   className?: string;

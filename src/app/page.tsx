@@ -1,16 +1,12 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import "./styles.scss";
-import Image from "next/image";
 import { useWindowWidthSize } from "@/hooks/useWindowWidthSize";
-
-import { useParams, useRouter } from "next/navigation";
-import Layout from "@/components/Layouts/Layout";
+import { useRouter } from "next/navigation";
+import Layout from "@/components/Layouts/Layout/page";
 import Paragraph from "@/components/Texts/Paragraph";
-import WaveLine from "../../public/icons/oceanLines/ocean-simple-line.svg";
-import Title from "@/components/Texts/Title";
 import CheckSquare from "../../public/icons/checks/check-square-white.svg";
-import InputText from "@/components/Inputs/InputText";
+import InputText from "@/components/Inputs/InputText/page";
 import { usePwa } from "@/contexts/pwa";
 import SplashPage from "./SplashPage";
 
@@ -34,10 +30,6 @@ const LandingPage: React.FC = () => {
     }
   }, []);
 
-  const loginPageHandler = () => {
-    router.push("/company-login");
-  };
-
   return (
     <>
       <div className="landing-page">
@@ -58,7 +50,6 @@ const LandingPage: React.FC = () => {
           className="landing-page-layout"
           hasNavbar
           hasToolBar={false}
-          loginCompany={loginPageHandler}
           hasFooterContacts
         >
           <main className="landing-page-layout__main">

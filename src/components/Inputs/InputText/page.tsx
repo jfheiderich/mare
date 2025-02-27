@@ -102,8 +102,8 @@ const InputText: React.FC<InputTextProps> = (props) => {
             }`}
           >
             <Image
-              width={100}
-              height={100}
+              width={24}
+              height={24}
               src={iconRight}
               alt="input icon right"
               onClick={iconRightClick}

@@ -3,16 +3,16 @@ import React, { useRef, useState } from "react";
 import "./styles.scss";
 import Image from "next/image";
 import Title from "@/components/Texts/Title";
-import Layout from "@/components/Layouts/Layout";
+import Layout from "@/components/Layouts/Layout/page";
 import { useParams, useRouter } from "next/navigation";
-import InputText from "@/components/Inputs/InputText";
+import InputText from "@/components/Inputs/InputText/page";
 import Button from "@/components/Buttons/Button";
 import Textarea from "@/components/TextAreas/Textarea";
 import { useJobVacancyRegister } from "@/hooks/useJobVacancyRegister";
 import { getSearchAddressByCEP } from "api/getSearchApi";
 import InputTextSelect, {
   IOptionInputTextSelectProps,
-} from "@/components/Inputs/InputTextSelect";
+} from "@/components/Inputs/InputTextSelect/page";
 import STATES from "@/mocks/states";
 
 const JobVacancyRegistrationPage: React.FC = () => {
