@@ -35,7 +35,7 @@ const HomePage: React.FC = () => {
       text: "Cadastrar Vaga",
     },
     {
-      action: () => router.push("/company-list-register"),
+      action: () => router.push("/candidate-list-register"),
       icon: PeopleSquareWhite,
       id: "4",
       text: "Gerenciar Candidato",

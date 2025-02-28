@@ -4,6 +4,7 @@ const currentURL = base_url_dev;
 
 const servicesAPI = {
   user: `${currentURL}/user`,
+  candidate: `${currentURL}/candidates`,
 } as const;
 
 export type ServiceType = keyof typeof servicesAPI;

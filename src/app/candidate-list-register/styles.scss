@@ -1,0 +1,10 @@
+.candidate-list-register {
+  .candidate-list-register__main {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    // background-color: var(--mare-aqua-blue);
+    height: calc(100dvh - 208px);
+  }
+}

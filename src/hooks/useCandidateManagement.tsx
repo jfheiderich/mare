@@ -1,10 +1,13 @@
 "use client";
 import React, { createContext, useState, ReactNode, useContext } from "react";
 import { ICandidateManagement } from "@/types/candidateManagement";
+import { ListAllCandidatesResponse } from "@/api/candidates/listAllCandidates";
 
 interface CandidateManagementContextProps {
-  setCandidateManagement: (company: ICandidateManagement) => void;
-  candidateManagement: ICandidateManagement;
+  setCandidateManagement: (
+    candidate: ICandidateManagement | ListAllCandidatesResponse
+  ) => void;
+  candidateManagement: ICandidateManagement | ListAllCandidatesResponse;
 }
 
 const CandidateManagementContext = createContext<
@@ -12,8 +15,9 @@ const CandidateManagementContext = createContext<
 >(undefined);
 
 const CandidateManagementProvider = ({ children }: { children: ReactNode }) => {
-  const [candidateManagement, setCandidateManagement] =
-    useState<ICandidateManagement>({} as ICandidateManagement);
+  const [candidateManagement, setCandidateManagement] = useState<
+    ICandidateManagement | ListAllCandidatesResponse
+  >({} as ICandidateManagement | ListAllCandidatesResponse);
 
   return (
     <CandidateManagementContext.Provider

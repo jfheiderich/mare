@@ -1,6 +1,6 @@
 .company-login-page {
   padding: 0 24px;
-  // display: grid;
+
   justify-items: center;
   align-items: center;
   overflow-y: hidden;
@@ -12,10 +12,6 @@
       flex-direction: column;
       gap: 24px;
       margin: 24px 0;
-      // height: calc(100dvh - 390px);
-      // overflow-y: scroll;
-      // overflow-x: visible;
-
       .form__link-button {
         text-align: left;
       }

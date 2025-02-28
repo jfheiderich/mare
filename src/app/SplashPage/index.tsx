@@ -34,7 +34,6 @@ const SplashPage: React.FC<SplashPageProps> = (props) => {
       className={`loading-page ${fade ? "hidden-fade-out" : ""}`}
     >
       <div className="loading-page__logo-container">
-        hi
         <Image src={whiteWaves} alt="Mare logo" width={100} height={100} />
       </div>
     </section>

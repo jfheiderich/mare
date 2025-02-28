@@ -1,3 +1,4 @@
+"use client";
 import React, { forwardRef, ReactNode } from "react";
 import "./styles.scss";
 import Image from "next/image";

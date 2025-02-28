@@ -9,7 +9,7 @@ interface ButtonProps {
   buttonStyle: "primary" | "secondary" | "tertiary";
   iconLeft?: string;
   iconRight?: string;
-  buttonText: string;
+  buttonText?: string;
   isDisabled?: boolean;
 }
 

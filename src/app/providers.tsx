@@ -2,6 +2,7 @@ import { PwaProvider } from "@/contexts/pwa";
 import { AgreementRegisterProvider } from "@/hooks/useAgreementRegister";
 import { ApprovedRegisterProvider } from "@/hooks/useApprovedRegister";
 import { CandidateManagementProvider } from "@/hooks/useCandidateManagement";
+import { CandidateSelectProvider } from "@/hooks/useCandidateSelect";
 import { CompanyRegisterProvider } from "@/hooks/useCompanyRegister";
 import { ContactRegisterProvider } from "@/hooks/useContactRegister";
 import { JobVacancyRegisterProvider } from "@/hooks/useJobVacancyRegister";
@@ -26,7 +27,9 @@ const Providers = ({ children }: { children: ReactNode }) => {
                       <CompanyRegisterProvider>
                         <JobVacancyRegisterProvider>
                           <CandidateRegisterProvider>
-                            {children}
+                            <CandidateSelectProvider>
+                              {children}
+                            </CandidateSelectProvider>
                           </CandidateRegisterProvider>
                         </JobVacancyRegisterProvider>
                       </CompanyRegisterProvider>
