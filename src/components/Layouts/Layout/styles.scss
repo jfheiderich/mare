@@ -16,7 +16,7 @@
       left: 0;
       right: 0;
       top: 0;
-      padding: 14px;
+      padding: var(--mare-spacing);
       display: flex;
       justify-content: space-between;
       border-bottom: 1px solid var(--mare-border);
@@ -68,7 +68,7 @@
             .list__list-item {
               text-transform: uppercase;
               text-wrap: nowrap;
-              padding: 16px;
+              padding: var(--mare-spacing);
               transition: all 0.3s ease-in-out;
               cursor: pointer;
               &:hover {
@@ -145,7 +145,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    gap: var(--mare-spacing);
 
     [alt="fundo azul em formato de onda"] {
       position: absolute;
@@ -167,7 +167,7 @@
         display: flex;
         justify-content: space-between;
         padding: 0 10%;
-        margin-bottom: 20px;
+        margin-bottom: var(--mare-spacing);
 
         .links__link {
           // text-align: center;
@@ -180,10 +180,11 @@
       }
 
       .footer__social-medias {
-        padding: 0 16px;
+        padding: 0 var(--mare-spacing);
         display: flex;
         justify-content: space-between;
         gap: 8px;
+        padding-bottom: var(--mare-spacing);
         .social-medias__icon-text-wrapper {
           display: flex;
           align-items: center;
@@ -204,13 +205,13 @@
     }
 
     .footer__rights-text {
-      margin-top: 8px;
       z-index: 1;
       position: relative;
       text-align: center;
       color: var(--mare-white);
       font-family: "Roboto Light";
       font-size: 12px;
+      padding-bottom: var(--mare-spacing);
     }
   }
 }

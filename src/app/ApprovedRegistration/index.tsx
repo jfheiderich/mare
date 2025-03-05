@@ -225,7 +225,7 @@ const ApprovedRegistrationPage: React.FC = () => {
       hasToolBar
     >
       <Title size="h2" text={`Cadastrar Aprovado (${registerStep}/3)`} />
-      <main className="approved-registration__form margin-top-16" ref={formRef}>
+      <main className="approved-registration__form " ref={formRef}>
         {registerStep === 1 ? (
           <div className="form__wrapper">
             <InputText
@@ -512,7 +512,7 @@ const ApprovedRegistrationPage: React.FC = () => {
             <div className="approved-registration__experiences-wrapper">
               <Title size="h3" text="Experiência" />
               {experiencesAdded.length ? (
-                <div className="list-experiences margin-top-16">
+                <div className="list-experiences">
                   <ul className="list-experience__ul">
                     {experiencesAdded.map((experience, index) => {
                       return (
@@ -535,7 +535,7 @@ const ApprovedRegistrationPage: React.FC = () => {
               ) : (
                 false
               )}
-              <div className="experiences-wrapper__content margin-top-16">
+              <div className="experiences-wrapper__content ">
                 <InputText
                   onChange={(value) =>
                     setExperience((prev) => ({
@@ -572,7 +572,6 @@ const ApprovedRegistrationPage: React.FC = () => {
         )}
 
         <Button
-          className="margin-top-16"
           buttonStyle="primary"
           buttonText={registerStep === 3 ? "Salvar" : "Continuar"}
           onClick={continueHandler}

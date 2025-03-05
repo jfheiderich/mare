@@ -11,20 +11,16 @@ const CompaniesListRegisterPage: React.FC = () => {
 
   return (
     <Layout
-      className="companies-list-register padding-16"
+      className="companies-list-register "
       hasNavbar
       hasToolBar
       pageTitle="Contas"
     >
-      <Title
-        text="Visualizar Registros"
-        size="h1"
-        className="margin-bottom-16"
-      />
+      <Title text="Visualizar Registros" size="h1" />
 
       <InputText onChange={setSearchList} value={searchList} />
 
-      <main className="companies-list-register__main margin-top-16"></main>
+      <main className="companies-list-register__main "></main>
     </Layout>
   );
 };

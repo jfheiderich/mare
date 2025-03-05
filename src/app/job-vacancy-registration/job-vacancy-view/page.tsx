@@ -22,12 +22,7 @@ const JobVacancyRegistrationViewPage: React.FC = () => {
   }, []);
 
   return (
-    <Layout
-      className="job-vacancy padding-16"
-      hasNavbar
-      pageTitle="Contas"
-      hasToolBar
-    >
+    <Layout className="job-vacancy " hasNavbar pageTitle="Contas" hasToolBar>
       <main className="job-vacancy__main">
         <Title text={`Empresa: ${jobVacancyData.vacancyTradeName}`} size="h2" />
         {Object.entries(jobVacancyData).map(([key, value], index) => (

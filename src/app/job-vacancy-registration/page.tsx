@@ -177,13 +177,13 @@ const JobVacancyRegistrationPage: React.FC = () => {
 
   return (
     <Layout
-      className="job-vacancy padding-16"
+      className="job-vacancy "
       hasNavbar
       pageTitle="Processo Seletivo"
       hasToolBar
     >
       <Title size="h2" text={`Cadastrar Vaga (${registrationStep}/3)`} />
-      <main className="job-vacancy__form margin-top-16" ref={formRef}>
+      <main className="job-vacancy__form " ref={formRef}>
         {registrationStep === 1 ? (
           <div className="form__wrapper">
             <InputText
@@ -402,7 +402,6 @@ const JobVacancyRegistrationPage: React.FC = () => {
         )}
 
         <Button
-          className="margin-top-16"
           buttonStyle="primary"
           buttonText={registrationStep === 3 ? "Salvar" : "Continuar"}
           onClick={continueHandler}

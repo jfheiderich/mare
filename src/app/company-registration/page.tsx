@@ -162,16 +162,13 @@ const CompanyRegistrationPage: React.FC = () => {
 
   return (
     <Layout
-      className="company-registration-page padding-16"
+      className="company-registration-page "
       hasNavbar
       pageTitle="Contas"
       hasToolBar
     >
       <Title size="h2" text={`Cadastrar Empresa (${registrationStep}/3)`} />
-      <main
-        className="company-registration-page__form margin-top-16"
-        ref={formRef}
-      >
+      <main className="company-registration-page__form " ref={formRef}>
         {registrationStep === 1 ? (
           <div className="form__wrapper">
             <InputText
@@ -311,7 +308,6 @@ const CompanyRegistrationPage: React.FC = () => {
           false
         )}
         <Button
-          className="margin-top-16"
           buttonStyle="primary"
           buttonText={registrationStep === 3 ? "Salvar" : "Continuar"}
           onClick={continueHandler}

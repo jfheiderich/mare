@@ -84,7 +84,7 @@ const CandidateManagementPage: React.FC = () => {
       hasToolBar
     >
       <Title size="h2" text="Gestão do Candidato" />
-      <main className="candidate-management__form margin-top-16" ref={formRef}>
+      <main className="candidate-management__form " ref={formRef}>
         <div className="form__wrapper">
           <InputText
             onChange={(value) =>
@@ -128,7 +128,6 @@ const CandidateManagementPage: React.FC = () => {
           />
         </div>
         <Button
-          className="margin-top-16"
           buttonStyle="primary"
           buttonText="Salvar"
           onClick={continueHandler}

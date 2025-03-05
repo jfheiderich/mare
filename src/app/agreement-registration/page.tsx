@@ -87,16 +87,13 @@ const AgreementRegistrationPage: React.FC = () => {
 
   return (
     <Layout
-      className="agreement-registration padding-16"
+      className="agreement-registration "
       hasNavbar
       pageTitle="Contas"
       hasToolBar
     >
       <Title size="h2" text="Cadastrar Contrato" />
-      <main
-        className="agreement-registration__form margin-top-16"
-        ref={formRef}
-      >
+      <main className="agreement-registration__form " ref={formRef}>
         <div className="form__wrapper">
           <InputText
             onChange={(value) =>
@@ -199,7 +196,6 @@ const AgreementRegistrationPage: React.FC = () => {
           />
         </div>
         <Button
-          className="margin-top-16"
           buttonStyle="primary"
           buttonText="Salvar"
           onClick={continueHandler}

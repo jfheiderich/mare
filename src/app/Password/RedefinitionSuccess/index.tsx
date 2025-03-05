@@ -25,19 +25,18 @@ const RedefinitionSuccessPage: React.FC = () => {
 				um novo login, clique no botão abaixo.`}
       />
 
-      <section className="redefinition-success-page__form margin-top-16">
+      <section className="redefinition-success-page__form ">
         <Button
           buttonStyle="primary"
           buttonText="Novo login"
           onClick={newLoginHandler}
-          className="margin-top-16"
         />
 
         <ButtonTextLink
           text="Voltar"
           isBackButton
           routeTo="/company-login"
-          className="margin-top-16 form__back-button"
+          className=" form__back-button"
         />
       </section>
     </Layout>

@@ -183,13 +183,13 @@ const Layout: React.FC<LayoutProps> = (props) => {
           false
         )}
         {/* {pageTitle ? (
-          <nav className="layout-component__page-title margin-vert-16">
+          <nav className="layout-component__page-title ">
             {pageTitleDetails().icon &&
             typeof pageTitleDetails().text === "string" ? (
               <Image width={100} height={100} 
                 src={pageTitleDetails().icon}
                 alt={pageTitleDetails().text}
-                className="page-title__icon margin-left-24"
+                className="page-title__icon"
               />
             ) : null}
 
@@ -199,7 +199,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
               isBackButton={isBackButton}
               text={!isBackButton && backButtonText ? backButtonText : "Voltar"}
               buttonStyle="light-14"
-              className="margin-right-24 button-link"
+              className=" button-link"
               onClick={() => {
                 if (!isBackButton && backButtonLink) {
                   router.push(backButtonLink);
@@ -266,8 +266,9 @@ const Layout: React.FC<LayoutProps> = (props) => {
             </div>
 
             <Image
-              width={100}
-              height={200}
+              width={200}
+              height={250}
+              quality={100}
               src={FooterWave}
               alt="fundo azul em formato de onda"
             />

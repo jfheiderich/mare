@@ -53,7 +53,7 @@ const LandingPage: React.FC = () => {
           hasFooterContacts
         >
           <main className="landing-page-layout__main">
-            <p className="main__introduce-text margin-16">
+            <p className="main__introduce-text">
               Reduza seu turnover e contrate com&nbsp;
               <b>eficiência</b>! Conectamos sua empresa a profissionais&nbsp;
               <b>comprometidos</b>e&nbsp;
@@ -105,7 +105,7 @@ const LandingPage: React.FC = () => {
                 boldText
                 textAlign="center"
                 text="FAÇA SEU ORÇAMENTO"
-                className="budget-contact__paragraph margin-vert-16"
+                className="budget-contact__paragraph "
               />
               <InputText
                 className="budget-contact__input"

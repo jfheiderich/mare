@@ -4,7 +4,6 @@ import "./styles.scss";
 import Image from "next/image";
 import Layout from "@/components/Layouts/Layout/page";
 import InputText from "@/components/Inputs/InputText/page";
-import { getSearchAddressByCEP } from "api/getSearchApi";
 import Title from "@/components/Texts/Title";
 import Button from "@/components/Buttons/Button";
 import { useParams, useRouter } from "next/navigation";
@@ -20,6 +19,7 @@ import EDUCATION from "@/mocks/education";
 import EXPERIENCE from "@/mocks/experience";
 import { useCandidateRegister } from "@/hooks/userCandidateRegister";
 import { Experience } from "@/types/experience";
+import { getSearchAddressByCEP } from "@/api/getSearchApi";
 
 const CandidateRegistrationPage: React.FC = () => {
   const router = useRouter();
@@ -184,7 +184,7 @@ const CandidateRegistrationPage: React.FC = () => {
       <Title size="h2" text={`Cadastrar Candidato (${registerStep}/2)`} />
       <main className="candidate-registration__main" ref={formRef}>
         {registerStep === 1 ? (
-          <div className="form__wrapper padding-top-16">
+          <div className="form__wrapper ">
             <InputText
               onChange={(value) =>
                 setCandidate((prev) => ({
@@ -367,7 +367,7 @@ const CandidateRegistrationPage: React.FC = () => {
             <div className="candidate-registration__experiences-wrapper">
               <Title size="h3" text="Experiência" />
               {experiencesAdded.length ? (
-                <div className="list-experiences margin-top-16">
+                <div className="list-experiences ">
                   <ul className="list-experience__ul">
                     {experiencesAdded.map((experience, index) => {
                       return (
@@ -390,7 +390,7 @@ const CandidateRegistrationPage: React.FC = () => {
               ) : (
                 false
               )}
-              <div className="experiences-wrapper__content margin-top-16">
+              <div className="experiences-wrapper__content ">
                 <InputText
                   onChange={(value) =>
                     setExperience((prev) => ({
@@ -428,7 +428,6 @@ const CandidateRegistrationPage: React.FC = () => {
         )}
 
         <Button
-          className="margin-top-16"
           buttonStyle="primary"
           buttonText={registerStep === 2 ? "Salvar" : "Continuar"}
           onClick={continueHandler}

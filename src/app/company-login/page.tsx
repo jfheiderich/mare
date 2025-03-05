@@ -96,12 +96,7 @@ const CompanyLoginPage: React.FC = () => {
       hasFooterContacts
     >
       <main className="company-login-page__main">
-        <Paragraph
-          boldText
-          fontSize={20}
-          text={`Empresa`}
-          className="margin-bottom-16"
-        />
+        <Paragraph boldText fontSize={20} text={`Empresa`} />
         <Paragraph
           fontSize={20}
           text={`Acesse a sua conta com seu e-mail e senha

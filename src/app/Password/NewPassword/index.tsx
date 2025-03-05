@@ -23,7 +23,7 @@ const NewPasswordPage: React.FC = () => {
     <Layout className="new-password-page" hasFooter hasNavbar>
       <Title text="Redefinição de senha" size="h1" />
 
-      <section className="new-password-page__form margin-top-16">
+      <section className="new-password-page__form ">
         <InputText
           label="Insira a nova senha"
           labelId="login-company-email"
@@ -40,21 +40,19 @@ const NewPasswordPage: React.FC = () => {
           value={confirmPassword}
           isWarning={inputsWarning}
           type="password"
-          className="margin-top-16"
         />
 
         <Button
           buttonStyle="primary"
           buttonText="Enviar"
           onClick={redefinitionPassRequest}
-          className="margin-top-16"
         />
 
         <ButtonTextLink
           text="Voltar"
           isBackButton
           routeTo="/company-login"
-          className="margin-top-16 form__back-button"
+          className=" form__back-button"
         />
       </section>
     </Layout>

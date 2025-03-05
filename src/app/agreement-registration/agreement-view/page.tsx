@@ -40,12 +40,7 @@ const AgreementViewPage: React.FC = () => {
   }, []);
 
   return (
-    <Layout
-      className="agreement-view padding-16"
-      hasNavbar
-      pageTitle="Contas"
-      hasToolBar
-    >
+    <Layout className="agreement-view " hasNavbar pageTitle="Contas" hasToolBar>
       <main className="agreement-view__main">
         <Title text={`Empresa: ${agreementData.CNPJ}`} size="h2" />
         {Object.entries(agreementData).map(([key, value], index) => (

@@ -48,12 +48,7 @@ const CompanyViewPage: React.FC = () => {
   }, []);
 
   return (
-    <Layout
-      className="company-view padding-16"
-      hasNavbar
-      pageTitle="Contas"
-      hasToolBar
-    >
+    <Layout className="company-view " hasNavbar pageTitle="Contas" hasToolBar>
       <main className="company-view__main">
         <Title text={`Empresa: ${companyData?.["Nome Fantasia"]}`} size="h2" />
         {Object.entries(companyData).map(([key, value], index) => (

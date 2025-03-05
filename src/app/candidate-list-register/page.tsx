@@ -57,7 +57,7 @@ const CandidateListRegisterPage: React.FC = () => {
 
   return (
     <Layout
-      className="candidate-list-register padding-16"
+      className="candidate-list-register "
       hasNavbar
       hasToolBar
       pageTitle="Visualizar Registros"
@@ -66,7 +66,7 @@ const CandidateListRegisterPage: React.FC = () => {
 
       <InputText onChange={setSearchList} value={searchList} />
 
-      <main className="candidate-list-register__main padding-vert-16">
+      <main className="candidate-list-register__main">
         {candidatesFiltered
           ?.filter((candidate) =>
             candidate.name

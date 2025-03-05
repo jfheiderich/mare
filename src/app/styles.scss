@@ -16,6 +16,7 @@
       text-align: right;
       max-width: 540px;
       margin-left: auto;
+      padding: var(--mare-spacing);
 
       b {
         font-family: "Roboto Bold Condensed Italic";
@@ -24,41 +25,40 @@
 
     .main__about-us-wrapper {
       background-color: var(--mare-sea-dust);
-      padding: 16px 24px;
+      padding: var(--mare-spacing);
       display: flex;
       flex-direction: column;
 
-      gap: 16px;
+      gap: var(--mare-spacing);
 
       .about-us-wrapper__title {
         color: var(--mare-white);
         font-family: "Roboto Bold";
         font-size: 16px;
-        max-width: 540px;
+        // max-width: 540px;
       }
 
       .about-us-wrapper__paragraph {
         color: var(--mare-white);
         font-size: 14px;
-        max-width: 540px;
+        // max-width: 540px;
       }
     }
 
     .main__explanation-card {
       background-color: var(--mare-sea-light-blue);
-      padding: 16px 24px;
+      padding: var(--mare-spacing);
 
       .wrapper__list-texts {
         display: flex;
         flex-direction: column;
-        gap: 16px;
-        margin-top: 16px;
+        gap: var(--mare-spacing);
       }
     }
 
     .main__budget-contact {
       display: grid;
-      padding: 16px 16px 40px 16px;
+      padding: var(--mare-spacing);
 
       .budget-contact__paragraph {
         justify-self: center;

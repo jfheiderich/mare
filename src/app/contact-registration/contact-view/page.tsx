@@ -39,12 +39,7 @@ const ContactViewPage: React.FC = () => {
   }, []);
 
   return (
-    <Layout
-      className="contact-view padding-16"
-      hasNavbar
-      pageTitle="Contas"
-      hasToolBar
-    >
+    <Layout className="contact-view " hasNavbar pageTitle="Contas" hasToolBar>
       <main className="contact-view__main">
         <Title text={`Empresa: ${contactData["CNPJ da Empresa"]}`} size="h2" />
         {Object.entries(contactData).map(([key, value], index) => (

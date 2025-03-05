@@ -54,7 +54,7 @@ const CandidateEditPage: React.FC = () => {
 
   return (
     <Layout
-      className="candidate-edit padding-16"
+      className="candidate-edit "
       hasNavbar
       hasToolBar
       pageTitle="Visualizar Registros"
@@ -63,7 +63,7 @@ const CandidateEditPage: React.FC = () => {
 
       <InputText onChange={setSearchList} value={searchList} />
 
-      <main className="candidate-edit__main padding-vert-16">
+      <main className="candidate-edit__main">
         {candidate &&
           Object.entries(candidate)
             .filter(

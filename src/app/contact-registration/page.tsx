@@ -91,7 +91,7 @@ const ContactRegistrationPage: React.FC = () => {
 
   return (
     <Layout
-      className="contact-registration padding-16"
+      className="contact-registration "
       hasNavbar
       pageTitle="Contas"
       hasToolBar
@@ -198,7 +198,6 @@ const ContactRegistrationPage: React.FC = () => {
           />
         </div>
         <Button
-          className="margin-top-16"
           buttonStyle="primary"
           buttonText="Salvar"
           onClick={continueHandler}

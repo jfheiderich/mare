@@ -24,7 +24,7 @@ const RedefinitionPasswordPage: React.FC = () => {
 
       <Paragraph text="Insira seu e-mail abaixo para redefinir a sua senha." />
 
-      <section className="redefinition-password-page__form margin-top-16">
+      <section className="redefinition-password-page__form ">
         <InputText
           label="E-mail cadastrado"
           labelId="redefinition-password-email"
@@ -38,14 +38,13 @@ const RedefinitionPasswordPage: React.FC = () => {
           buttonStyle="primary"
           buttonText="Enviar"
           onClick={redefinitionPassRequest}
-          className="margin-top-16"
         />
 
         <ButtonTextLink
           text="Voltar"
           isBackButton
           routeTo="/company-login"
-          className="margin-top-16 form__back-button"
+          className=" form__back-button"
         />
       </section>
     </Layout>
