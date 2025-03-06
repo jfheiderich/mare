@@ -15,6 +15,7 @@ import LinkedinIcon from "../../../../public/icons/socialMedias/linkedIn-icon-wh
 import WhatsAppIcon from "../../../../public/icons/socialMedias/whatsapp-icon-white.svg";
 import ChevronDown from "../../../../public/icons/chevrons/chevron-down-dark-blue.svg";
 import FooterWave from "../../../../public/icons/oceanLines/footer-wave.png";
+import NavbarLayout from "@/components/Navbars/page";
 
 interface LayoutProps {
   className?: string;
@@ -26,12 +27,12 @@ interface LayoutProps {
   isBackButton?: boolean;
   backButtonLink?: string;
   backButtonText?: string;
-  pageTitle?:
-    | "Contas"
-    | "Processo Seletivo"
-    | "Perfil"
-    | "Visualizar Registros"
-    | undefined;
+  styleNav?:
+    | "mare"
+    | "company"
+    | "selection-process"
+    | "profile"
+    | "list-registers";
 }
 
 const Layout: React.FC<LayoutProps> = (props) => {
@@ -41,7 +42,7 @@ const Layout: React.FC<LayoutProps> = (props) => {
     hasFooter,
     hasNavbar,
     hasToolBar,
-    pageTitle,
+    styleNav = "mare",
     isBackButton,
     backButtonLink,
     hasFooterContacts,
@@ -49,7 +50,6 @@ const Layout: React.FC<LayoutProps> = (props) => {
   } = props;
 
   const router = useRouter();
-  const [isOpenLoginDropDown, setIsOpenLoginDropDown] = useState(false);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -87,129 +87,22 @@ const Layout: React.FC<LayoutProps> = (props) => {
   };
 
   const loginCandidate = () => {};
-
-  const pageTitleDetails = () => {
-    switch (pageTitle) {
-      case "Contas":
-        return { icon: BuildingIconGreen, text: "Contas" };
-      case "Perfil":
-        return { icon: ProfileIcon, text: pageTitle };
-      case "Processo Seletivo":
-        return { icon: WalletIcon, text: pageTitle };
-      case "Visualizar Registros":
-        return { icon: TableIcon, text: pageTitle };
-
-      default:
-        return { icon: "", text: "" };
-    }
-  };
-
-  const loginModesList = [
-    {
-      id: "1",
-      text: "Sou empresa",
-      action: () => loginCompany(),
-    },
-    {
-      id: "2",
-      text: "Sou Candidato",
-      action: loginCandidate || (() => {}),
-    },
-    {
-      id: "3",
-      text: "Sou Mediador",
-      action: loginCandidate || (() => {}),
-    },
-  ];
+  const loginMediator = () => {};
 
   return (
     <div id="layout-component">
       <div className="layout-component-wrapper">
         {hasNavbar ? (
-          <nav className="layout-component__navbar">
-            <p className="navbar__text-wrapper">
-              <span className="text-wrapper__bold">MARE</span> Conecta
-            </p>
-            <figure className="navbar__logo-wrapper">
-              <Image
-                width={100}
-                height={20}
-                src={LinesWaves}
-                alt="ondas azuis"
-              />
-            </figure>
-
-            <div className="navbar__login-wrapper">
-              <button
-                className="login-wrapper__button"
-                onClick={() => setIsOpenLoginDropDown((prev) => !prev)}
-              >
-                Entrar
-                <span
-                  className={`button__arrow-wrapper ${
-                    isOpenLoginDropDown ? "upside-down" : ""
-                  }`}
-                >
-                  <Image
-                    width={16}
-                    height={10}
-                    src={ChevronDown}
-                    alt="seta para baixo"
-                  />
-                </span>
-              </button>
-              {isOpenLoginDropDown ? (
-                <div className="login-wrapper__drop-down">
-                  <ul className="drop-down__list">
-                    {loginModesList.map((mode, index, arr) => {
-                      return (
-                        <li
-                          className="list__list-item"
-                          key={mode.id}
-                          onClick={mode.action}
-                        >
-                          {mode.text}
-                        </li>
-                      );
-                    })}
-                  </ul>
-                </div>
-              ) : (
-                false
-              )}
-            </div>
-          </nav>
+          <NavbarLayout
+            loginCandidate={loginCandidate}
+            loginCompany={loginCompany}
+            loginMediator={loginMediator}
+            styleNav={styleNav}
+          />
         ) : (
           false
         )}
-        {/* {pageTitle ? (
-          <nav className="layout-component__page-title ">
-            {pageTitleDetails().icon &&
-            typeof pageTitleDetails().text === "string" ? (
-              <Image width={100} height={100} 
-                src={pageTitleDetails().icon}
-                alt={pageTitleDetails().text}
-                className="page-title__icon"
-              />
-            ) : null}
 
-            <Title size="h3" text={pageTitleDetails().text} />
-
-            <ButtonTextLink
-              isBackButton={isBackButton}
-              text={!isBackButton && backButtonText ? backButtonText : "Voltar"}
-              buttonStyle="light-14"
-              className=" button-link"
-              onClick={() => {
-                if (!isBackButton && backButtonLink) {
-                  router.push(backButtonLink);
-                }
-              }}
-            />
-          </nav>
-        ) : (
-          false
-        )}*/}
         <div
           id="layout-component__main"
           className={`${className ?? ""} ${hasNavbar ? "space-nav" : ""}`}

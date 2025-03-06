@@ -42,13 +42,14 @@ const HomePage: React.FC = () => {
   ];
 
   return (
-    <Layout className="home-page " hasNavbar hasToolBar>
-      <Title text="Bem-vindo(a)!" size="h1" />
+    <Layout className="company-menu" hasNavbar hasToolBar styleNav="company">
+      <div className="company-menu__header-text">
+        <Title text="Bem-vindo(a)!" size="h1" />
+        <Paragraph text={`O que você deseja fazer hoje?`} />
+      </div>
 
-      <Paragraph text={`O que você deseja fazer hoje?`} />
-
-      <main className="home-page__main ">
-        <GridButtons buttons={buttonsNavigation} className="padding-top-40" />
+      <main className="company-menu__main">
+        <GridButtons buttons={buttonsNavigation} />
       </main>
     </Layout>
   );

@@ -61,7 +61,7 @@ const SelectionProcessMenuPage: React.FC = () => {
           value={searchValue}
         />
 
-        <GridButtons buttons={buttonsNavigation} className=" padding-top-40" />
+        <GridButtons buttons={buttonsNavigation} className=" " />
       </main>
     </Layout>
   );

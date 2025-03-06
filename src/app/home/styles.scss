@@ -1,9 +1,12 @@
 .home-page {
+  .home-page__header-text {
+    padding-bottom: var(--mare-spacing);
+  }
   .home-page__main {
     overflow-y: scroll;
     display: flex;
     width: 100%;
     justify-content: center;
-    height: calc(100dvh - 200px);
+    height: calc(100dvh - 248px);
   }
 }

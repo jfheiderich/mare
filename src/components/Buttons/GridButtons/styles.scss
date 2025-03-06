@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 114px 114px;
   grid-auto-rows: 114px;
-  gap: 24px;
+  gap: var(--mare-spacing);
   user-select: none;
 
   .grid-buttons__button {
@@ -15,7 +15,7 @@
     justify-content: center;
     cursor: pointer;
     transition: opacity 0.3s ease-in-out;
-    padding: 16px;
+    padding: var(--mare-spacing);
     box-shadow: var(--mare-box-shadow-secondary);
 
     &:hover {
