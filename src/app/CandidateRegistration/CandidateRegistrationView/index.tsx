@@ -25,7 +25,7 @@ const CandidateRegistrationViewPage: React.FC = () => {
     <Layout
       className="candidate-registration"
       hasNavbar
-      pageTitle="Processo Seletivo"
+      styleNav="Processo Seletivo"
       hasToolBar
     >
       <main className="candidate-registration__main">

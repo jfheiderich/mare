@@ -221,7 +221,7 @@ const ApprovedRegistrationPage: React.FC = () => {
     <Layout
       className="approved-registration"
       hasNavbar
-      pageTitle="Processo Seletivo"
+      styleNav="Processo Seletivo"
       hasToolBar
     >
       <Title size="h2" text={`Cadastrar Aprovado (${registerStep}/3)`} />

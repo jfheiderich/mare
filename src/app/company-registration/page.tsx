@@ -164,7 +164,7 @@ const CompanyRegistrationPage: React.FC = () => {
     <Layout
       className="company-registration-page "
       hasNavbar
-      pageTitle="Contas"
+      styleNav="company"
       hasToolBar
     >
       <Title size="h2" text={`Cadastrar Empresa (${registrationStep}/3)`} />

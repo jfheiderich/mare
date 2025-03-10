@@ -48,12 +48,7 @@ const SelectionProcessMenuPage: React.FC = () => {
   ];
 
   return (
-    <Layout
-      className="selection-process-menu"
-      hasNavbar
-      hasToolBar
-      pageTitle="Processo Seletivo"
-    >
+    <Layout className="selection-process-menu" hasNavbar hasToolBar>
       <main className="selection-process-menu__main">
         <InputText
           labelId="search"
@@ -61,7 +56,7 @@ const SelectionProcessMenuPage: React.FC = () => {
           value={searchValue}
         />
 
-        <GridButtons buttons={buttonsNavigation} className=" " />
+        <GridButtons buttons={buttonsNavigation} />
       </main>
     </Layout>
   );

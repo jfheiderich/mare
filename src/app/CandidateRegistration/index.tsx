@@ -179,7 +179,7 @@ const CandidateRegistrationPage: React.FC = () => {
       className="candidate-registration"
       hasNavbar
       hasToolBar
-      pageTitle="Processo Seletivo"
+      styleNav="Processo Seletivo"
     >
       <Title size="h2" text={`Cadastrar Candidato (${registerStep}/2)`} />
       <main className="candidate-registration__main" ref={formRef}>

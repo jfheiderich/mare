@@ -80,7 +80,7 @@ const CandidateManagementPage: React.FC = () => {
     <Layout
       className="candidate-management"
       hasNavbar
-      pageTitle="Processo Seletivo"
+      styleNav="Processo Seletivo"
       hasToolBar
     >
       <Title size="h2" text="Gestão do Candidato" />

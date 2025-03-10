@@ -1,10 +1,33 @@
 .candidate-edit {
+  .candidate-edit__header-text {
+    .header-text__register-details {
+      .register-details__inner {
+        border: 1px solid var(--mare-border);
+        display: flex;
+        justify-content: flex-start;
+        border-radius: 16px;
+        padding: 16px;
+
+        .inner__headers {
+          .headers__header {
+            padding: 8px;
+          }
+        }
+
+        .inner__values {
+          .values__value {
+            padding: 8px;
+          }
+        }
+      }
+    }
+  }
   .candidate-edit__main {
     display: flex;
     flex-direction: column;
     gap: 8px;
-
-    // background-color: var(--mare-aqua-blue);
-    height: calc(100dvh - 208px);
+    overflow-y: scroll;
+    padding: 16px 0;
+    height: calc(100dvh - 356px);
   }
 }

@@ -3,8 +3,9 @@
     display: flex;
     flex-direction: column;
     gap: 8px;
-
-    // background-color: var(--mare-aqua-blue);
-    height: calc(100dvh - 208px);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: calc(100dvh - 295px);
+    padding-top: 16px;
   }
 }

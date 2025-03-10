@@ -51,7 +51,6 @@ const fetchApi = async (props: FetchApiProps) => {
     const response = await fetch(apiRoute, config);
 
     let res = null;
-    // ⚠️ Just call json() if response has a content
     if (response.status !== 204) {
       res = await response.json().catch(() => null);
     }

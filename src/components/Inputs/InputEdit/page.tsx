@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import "./styles.scss";
 import InputText from "../InputText/page";
 import Button from "@/components/Buttons/Button";
 import Image from "next/image";
@@ -42,10 +43,14 @@ const InputEdit: React.FC<InputEditProps> = (props) => {
         placeholder={placeholder}
         type={type}
         mask={mask}
+        className="input-edit__input"
       />
 
-      <button onClick={() => setIsDisabled((prev) => !prev)}>
-        <Image src={PencilEditIcon} width={24} height={24} alt="lápis editor" />
+      <button
+        onClick={() => setIsDisabled((prev) => !prev)}
+        className="input-edit__button"
+      >
+        <Image src={PencilEditIcon} width={20} height={20} alt="lápis editor" />
       </button>
     </section>
   );

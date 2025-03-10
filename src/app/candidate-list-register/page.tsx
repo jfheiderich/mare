@@ -60,7 +60,7 @@ const CandidateListRegisterPage: React.FC = () => {
       className="candidate-list-register "
       hasNavbar
       hasToolBar
-      pageTitle="Visualizar Registros"
+      styleNav="list-registers"
     >
       <Title text="Visualizar Registros" size="h1" />
 

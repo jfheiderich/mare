@@ -15,11 +15,14 @@ const UseWindowWidthSizeContext = createContext<
 >(undefined);
 
 const UseWindowWidthSizeProvider = ({ children }: { children: ReactNode }) => {
-  const [windowSize, setWindowSize] = useState(window.innerWidth);
+  const [windowSize, setWindowSize] = useState(
+    typeof window === "undefined" ? 0 : window.innerWidth
+  );
 
   useEffect(() => {
+    if (typeof window === "undefined") return;
     const handleResize = () => {
-      setWindowSize(window.innerWidth);
+      setWindowSize(typeof window === "undefined" ? 0 : window.innerWidth);
     };
 
     window.addEventListener("resize", handleResize);

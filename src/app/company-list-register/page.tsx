@@ -14,7 +14,7 @@ const CompaniesListRegisterPage: React.FC = () => {
       className="companies-list-register "
       hasNavbar
       hasToolBar
-      pageTitle="Contas"
+      styleNav="company"
     >
       <Title text="Visualizar Registros" size="h1" />
 

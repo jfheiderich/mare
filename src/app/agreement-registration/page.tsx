@@ -89,7 +89,7 @@ const AgreementRegistrationPage: React.FC = () => {
     <Layout
       className="agreement-registration "
       hasNavbar
-      pageTitle="Contas"
+      styleNav="company"
       hasToolBar
     >
       <Title size="h2" text="Cadastrar Contrato" />

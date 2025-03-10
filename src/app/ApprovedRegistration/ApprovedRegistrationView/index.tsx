@@ -23,7 +23,7 @@ const ApprovedRegistrationViewPage: React.FC = () => {
   }, []);
 
   return (
-    <Layout className="agreement-view" hasNavbar pageTitle="Contas" hasToolBar>
+    <Layout className="agreement-view" hasNavbar styleNav="company" hasToolBar>
       <main className="agreement-view__main">
         <Title text={`Cadastro de Aprovado`} size="h2" />
 

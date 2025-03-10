@@ -1,0 +1,24 @@
+#input-edit {
+  display: flex;
+  align-items: flex-end;
+  gap: 16px;
+  .input-edit__input {
+    width: 100%;
+  }
+
+  .input-edit__button {
+    border: none;
+    border-radius: 16px;
+    transition: all 0.3s ease-in-out;
+    outline: none;
+    user-select: none;
+    cursor: pointer;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+    [alt="lápis editor"] {
+      padding: 14px;
+    }
+  }
+}

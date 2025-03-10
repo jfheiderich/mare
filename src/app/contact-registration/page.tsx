@@ -93,7 +93,7 @@ const ContactRegistrationPage: React.FC = () => {
     <Layout
       className="contact-registration "
       hasNavbar
-      pageTitle="Contas"
+      styleNav="company"
       hasToolBar
     >
       <Title size="h2" text="Cadastrar Contato" />

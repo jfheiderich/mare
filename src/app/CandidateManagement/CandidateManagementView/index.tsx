@@ -23,7 +23,7 @@ const CandidateManagementView: React.FC = () => {
   }, []);
 
   return (
-    <Layout className="company-view" hasNavbar pageTitle="Contas" hasToolBar>
+    <Layout className="company-view" hasNavbar styleNav="company" hasToolBar>
       <main className="company-view__main">
         <Title text={`Empresa: ${companyData.corporateName}`} size="h2" />
         {Object.entries(companyData).map(([key, value], index) => (

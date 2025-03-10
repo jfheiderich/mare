@@ -179,7 +179,7 @@ const JobVacancyRegistrationPage: React.FC = () => {
     <Layout
       className="job-vacancy "
       hasNavbar
-      pageTitle="Processo Seletivo"
+      styleNav="Processo Seletivo"
       hasToolBar
     >
       <Title size="h2" text={`Cadastrar Vaga (${registrationStep}/3)`} />
