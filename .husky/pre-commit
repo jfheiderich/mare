@@ -1,0 +1,7 @@
+
+
+# echo "🔎 ESLINT verification in progress............"
+# npx eslint --fix .
+
+echo "🔎 PRETTIER verification in progress............"
+npx prettier --write .

@@ -1,0 +1,3 @@
+echo "🔎 Building in progress............"
+
+npm run build
