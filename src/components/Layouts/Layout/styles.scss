@@ -5,16 +5,12 @@
   overflow-x: hidden;
 
   .layout-component-wrapper {
-    padding: 0 16px;
     width: 100dvw;
   }
 
   #layout-component__main {
-    padding: var(--mare-spacing);
-
     &.space-nav {
-      margin-top: 60px;
-      height: calc(100dvh - 170px);
+      padding-top: 60px;
     }
   }
 

@@ -18,7 +18,7 @@
     .text-area__wrapper__input {
       resize: none;
       display: flex;
-      width: calc(100% - 32px);
+      width: 100%;
       border: 1px solid var(--mare-border);
       padding: 16px;
       border-radius: 16px;

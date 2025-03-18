@@ -37,15 +37,5 @@
 	],
 	"exclude": [
 		"node_modules"
-	],
-	"lint-staged": {
-		"*.{js,jsx,ts,tsx,json,md,css,scss}": "prettier --write",
-		"*.{ts,tsx,js,jsx}": [
-			"eslint --fix",
-			"prettier --write"
-		],
-		"*.{json,md,css,scss}": [
-			"prettier --write"
-		]
-	}
+	]
 }

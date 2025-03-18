@@ -3,6 +3,7 @@
   flex-direction: column;
   position: relative;
   z-index: 0;
+  // margin-bottom: 16px;
 
   &.input-text-class {
     // margin: 0 4px;
@@ -26,7 +27,7 @@
   .input-text__input-wrapper {
     .input-wrapper__input {
       display: flex;
-      width: calc(100% - 32px);
+      width: 100%;
       border: 1px solid var(--mare-border);
       padding: 16px;
       border-radius: 16px;

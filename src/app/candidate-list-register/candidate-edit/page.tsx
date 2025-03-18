@@ -52,16 +52,16 @@ const CandidateEditPage: React.FC = () => {
 
   return (
     <Layout
-      className="candidate-edit "
+      className="candidate-edit"
       hasNavbar
       hasToolBar
       styleNav="list-registers"
     >
-      <section className="candidate-edit__header-text">
+      <main className="candidate-edit__main wrapper standard-height">
         <Title text="Editar registro de candidato" size="h1" />
 
-        <div className="header-text__register-details">
-          <div className="register-details__inner">
+        <section className="candidate-edit__register-details">
+          <div className="register-details__inner inner">
             <section className="inner__headers">
               <p className="headers__header">Registro Realizado via:</p>
               <p className="headers__header">Registrado em:</p>
@@ -97,95 +97,96 @@ const CandidateEditPage: React.FC = () => {
               )}
             </section>
           </div>
-        </div>
-      </section>
-
-      <main className="candidate-edit__main">
-        <InputEdit
-          valueInput={candidateSelect?.name}
-          label="Nome"
-          setValueInput={(newValue) => handleInputChange("name", newValue)}
-        />
-        <InputEdit
-          valueInput={candidateSelect?.cpf}
-          label="CPF"
-          mask="999.999.999-99"
-          setValueInput={(newValue) => handleInputChange("cpf", newValue)}
-        />
-        <InputEdit
-          valueInput={candidateSelect?.birthDate}
-          label="Data de Nascimento"
-          mask="99/99/9999"
-          setValueInput={(newValue) => handleInputChange("birthDate", newValue)}
-        />
-
-        <InputEdit
-          valueInput={candidateSelect?.phone}
-          label="Número de Telefone"
-          mask="(99) 99999-9999"
-          setValueInput={(newValue) => handleInputChange("phone", newValue)}
-        />
-        <InputEdit
-          valueInput={candidateSelect?.phone}
-          label="Número de Telefone"
-          mask="(99) 99999-9999"
-          setValueInput={(newValue) => handleInputChange("phone", newValue)}
-        />
-        <InputEdit
-          valueInput={candidateSelect?.cep}
-          label="CEP"
-          mask="99999-999"
-          setValueInput={(newValue) => handleInputChange("cep", newValue)}
-        />
-        <InputEdit
-          valueInput={candidateSelect?.city}
-          label="Cidade"
-          setValueInput={(newValue) => handleInputChange("city", newValue)}
-        />
-        <InputEdit
-          valueInput={candidateSelect?.state}
-          label="Estado"
-          setValueInput={(newValue) => handleInputChange("state", newValue)}
-        />
-
-        <InputEdit
-          valueInput={candidateSelect?.neighborhood}
-          label="Bairro"
-          setValueInput={(newValue) =>
-            handleInputChange("neighborhood", newValue)
-          }
-        />
-        <InputEdit
-          valueInput={candidateSelect?.pcd}
-          label="PCD"
-          setValueInput={(newValue) => handleInputChange("pcd", newValue)}
-        />
-        <InputEdit
-          valueInput={candidateSelect?.gender}
-          label="Gênero"
-          setValueInput={(newValue) => handleInputChange("gender", newValue)}
-        />
-        <InputEdit
-          valueInput={candidateSelect?.race}
-          label="Raça	"
-          setValueInput={(newValue) => handleInputChange("race", newValue)}
-        />
-        <InputEdit
-          valueInput={candidateSelect?.education}
-          label="Escolaridade"
-          setValueInput={(newValue) => handleInputChange("education", newValue)}
-        />
-        {/* TODO */}
-        {/* <InputEdit
+        </section>
+        <section className="candidate-edit__form-edit form-core">
+          <InputEdit
+            valueInput={candidateSelect?.name}
+            label="Nome"
+            setValueInput={(newValue) => handleInputChange("name", newValue)}
+          />
+          <InputEdit
+            valueInput={candidateSelect?.cpf}
+            label="CPF"
+            mask="999.999.999-99"
+            setValueInput={(newValue) => handleInputChange("cpf", newValue)}
+          />
+          <InputEdit
+            valueInput={candidateSelect?.birthDate}
+            label="Data de Nascimento"
+            mask="99/99/9999"
+            setValueInput={(newValue) =>
+              handleInputChange("birthDate", newValue)
+            }
+          />
+          <InputEdit
+            valueInput={candidateSelect?.phone}
+            label="Número de Telefone"
+            mask="(99) 99999-9999"
+            setValueInput={(newValue) => handleInputChange("phone", newValue)}
+          />
+          <InputEdit
+            valueInput={candidateSelect?.phone}
+            label="Número de Telefone"
+            mask="(99) 99999-9999"
+            setValueInput={(newValue) => handleInputChange("phone", newValue)}
+          />
+          <InputEdit
+            valueInput={candidateSelect?.cep}
+            label="CEP"
+            mask="99999-999"
+            setValueInput={(newValue) => handleInputChange("cep", newValue)}
+          />
+          <InputEdit
+            valueInput={candidateSelect?.city}
+            label="Cidade"
+            setValueInput={(newValue) => handleInputChange("city", newValue)}
+          />
+          <InputEdit
+            valueInput={candidateSelect?.state}
+            label="Estado"
+            setValueInput={(newValue) => handleInputChange("state", newValue)}
+          />
+          <InputEdit
+            valueInput={candidateSelect?.neighborhood}
+            label="Bairro"
+            setValueInput={(newValue) =>
+              handleInputChange("neighborhood", newValue)
+            }
+          />
+          <InputEdit
+            valueInput={candidateSelect?.pcd}
+            label="PCD"
+            setValueInput={(newValue) => handleInputChange("pcd", newValue)}
+          />
+          <InputEdit
+            valueInput={candidateSelect?.gender}
+            label="Gênero"
+            setValueInput={(newValue) => handleInputChange("gender", newValue)}
+          />
+          <InputEdit
+            valueInput={candidateSelect?.race}
+            label="Raça	"
+            setValueInput={(newValue) => handleInputChange("race", newValue)}
+          />
+          <InputEdit
+            valueInput={candidateSelect?.education}
+            label="Escolaridade"
+            setValueInput={(newValue) =>
+              handleInputChange("education", newValue)
+            }
+          />
+          {/* TODO */}
+          {/* <InputEdit
           valueInput={candidateSelect?.courses[0]}
           label="Cursos"
           setValueInput={(newValue) => handleInputChange("courses", newValue)}
         /> */}
-        <InputEdit
-          valueInput={candidateSelect?.note}
-          label="Mensagem"
-          setValueInput={(newValue) => handleInputChange("note", newValue)}
-        />
+          <InputEdit
+            valueInput={candidateSelect?.note}
+            label="Mensagem"
+            setValueInput={(newValue) => handleInputChange("note", newValue)}
+          />
+        </section>
       </main>
     </Layout>
   );

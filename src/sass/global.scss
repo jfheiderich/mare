@@ -31,9 +31,8 @@
   }
 }
 
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+* {
+  box-sizing: border-box;
 }
 
 html {
@@ -115,4 +114,29 @@ input:focus {
 textarea:focus {
   outline: none;
   background-color: var(--mare-gray-super-light);
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.wrapper {
+  margin: 16px;
+
+  &.standard-height {
+    height: calc(100dvh - 92px);
+  }
+
+  .inner {
+    padding: 16px;
+  }
+}
+
+.form-core {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-y: scroll;
+  padding: 16px 0 78px 0;
 }

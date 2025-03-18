@@ -95,8 +95,8 @@ const CompanyLoginPage: React.FC = () => {
       hasNavbar
       hasFooterContacts
     >
-      <main className="company-login-page__main">
-        <Paragraph boldText fontSize={20} text={`Empresa`} />
+      <main className="company-login-page__main wrapper standard-height">
+        <Title text="Empresa" size="h1" />
         <Paragraph
           fontSize={20}
           text={`Acesse a sua conta com seu e-mail e senha

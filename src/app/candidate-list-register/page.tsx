@@ -1,18 +1,15 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import "./styles.scss";
-import Image from "next/image";
 import Title from "@/components/Texts/Title";
-import Paragraph from "@/components/Texts/Paragraph";
 import Layout from "@/components/Layouts/Layout/page";
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import InputText from "@/components/Inputs/InputText/page";
 import LIST_ALL_CANDIDATES, {
   ListAllCandidatesResponse,
 } from "@/api/candidates/listAllCandidates";
 import { useUserInfo } from "@/hooks/userInfo";
 import ListItemLink from "@/components/ListItemLink/page";
-import { useCandidateManagement } from "@/hooks/useCandidateManagement";
 import { useCandidateSelect } from "@/hooks/useCandidateSelect";
 
 const CandidateListRegisterPage: React.FC = () => {
@@ -57,31 +54,33 @@ const CandidateListRegisterPage: React.FC = () => {
 
   return (
     <Layout
-      className="candidate-list-register "
+      className="candidate-list-register"
       hasNavbar
       hasToolBar
       styleNav="list-registers"
     >
-      <Title text="Visualizar Registros" size="h1" />
+      <main className="candidate-list-register__main wrapper standard-height">
+        <Title text="Visualizar Registros" size="h1" />
 
-      <InputText onChange={setSearchList} value={searchList} />
+        <InputText onChange={setSearchList} value={searchList} />
 
-      <main className="candidate-list-register__main">
-        {candidatesFiltered
-          ?.filter((candidate) =>
-            candidate.name
-              .toLocaleLowerCase()
-              .startsWith(searchList.toLocaleLowerCase())
-          )
-          .map((candidate, index) => (
-            <ListItemLink
-              key={index}
-              highlightText={candidate.name}
-              simpleText={candidate.birthDate}
-              hasArrowRight
-              onClick={() => candidateSelected(candidate)}
-            />
-          ))}
+        <section className="main__list-wrapper form-core">
+          {candidatesFiltered
+            ?.filter((candidate) =>
+              candidate.name
+                .toLocaleLowerCase()
+                .startsWith(searchList.toLocaleLowerCase())
+            )
+            .map((candidate, index) => (
+              <ListItemLink
+                key={index}
+                highlightText={candidate.name}
+                simpleText={candidate.birthDate}
+                hasArrowRight
+                onClick={() => candidateSelected(candidate)}
+              />
+            ))}
+        </section>
       </main>
     </Layout>
   );

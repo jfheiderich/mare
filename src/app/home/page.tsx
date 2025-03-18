@@ -44,12 +44,10 @@ const HomePage: React.FC = () => {
 
   return (
     <Layout className="home-page" hasNavbar hasToolBar>
-      <div className="home-page__header-text">
+      <main className="home-page__main wrapper standard-height">
         <Title text="Bem-vindo(a)!" size="h1" />
         <Paragraph text={`O que você deseja fazer hoje?`} />
-      </div>
 
-      <main className="home-page__main">
         <GridButtons buttons={buttonsNavigation} />
       </main>
     </Layout>

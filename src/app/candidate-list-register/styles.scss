@@ -2,10 +2,8 @@
   .candidate-list-register__main {
     display: flex;
     flex-direction: column;
-    gap: 8px;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    height: calc(100dvh - 295px);
-    padding-top: 16px;
+
+    .main__list-wrapper {
+    }
   }
 }

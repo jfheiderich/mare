@@ -93,9 +93,12 @@ const JobVacancyRegistrationPage: React.FC = () => {
       .map(([key, _]) => `${key}IsWarning`);
 
     setWarningInput((prev) => {
-      const updatedWarnings = warningInputs.reduce((acc, warning) => {
-        return { ...acc, [warning]: true };
-      }, {} as Record<string, boolean>);
+      const updatedWarnings = warningInputs.reduce(
+        (acc, warning) => {
+          return { ...acc, [warning]: true };
+        },
+        {} as Record<string, boolean>
+      );
 
       return { ...prev, ...updatedWarnings };
     });
@@ -177,235 +180,236 @@ const JobVacancyRegistrationPage: React.FC = () => {
 
   return (
     <Layout
-      className="job-vacancy "
+      className="job-vacancy"
       hasNavbar
-      styleNav="Processo Seletivo"
+      styleNav="selection-process"
       hasToolBar
     >
-      <Title size="h2" text={`Cadastrar Vaga (${registrationStep}/3)`} />
-      <main className="job-vacancy__form " ref={formRef}>
-        {registrationStep === 1 ? (
-          <div className="form__wrapper">
-            <InputText
-              onChange={(value) =>
-                setVacancyData((prev) => ({ ...prev, contractId: value }))
-              }
-              value={vacancyData.contractId}
-              label="ID do Contrato"
-              placeholder=""
-              type="text"
-              isWarning={warningInput.contractIdIsWarning}
-            />
-            <InputText
-              onChange={(value) =>
-                setVacancyData((prev) => ({ ...prev, vacancyCNPJ: value }))
-              }
-              value={vacancyData.vacancyCNPJ}
-              label="CNPJ do local da vaga"
-              placeholder=""
-              type="text"
-              mask="99.999.999/9999-99"
-              isWarning={warningInput.vacancyCNPJIsWarning}
-            />
-
-            <InputText
-              onChange={(value) =>
-                setVacancyData((prev) => ({
-                  ...prev,
-                  vacancyCorporateName: value,
-                }))
-              }
-              value={vacancyData.vacancyCorporateName}
-              label="Razão Social do local da vaga"
-              placeholder=""
-              type="text"
-              isWarning={warningInput.vacancyCorporateNameIsWarning}
-            />
-            <InputText
-              onChange={(value) =>
-                setVacancyData((prev) => ({
-                  ...prev,
-                  vacancyTradeName: value,
-                }))
-              }
-              value={vacancyData.vacancyTradeName}
-              label="Nome Fantasia do local da vaga"
-              placeholder=""
-              isWarning={warningInput.vacancyTradeNameIsWarning}
-              type="text"
-            />
-          </div>
-        ) : registrationStep === 2 ? (
-          <div className="form__wrapper">
-            <InputText
-              onChange={searchAddressByCEP}
-              value={vacancyAddressData.vacancyCEP}
-              label="CEP"
-              mask="99999-999"
-              placeholder=""
-              type="text"
-              isWarning={warningInput.vacancyCEPIsWarning}
-            />
-            <InputText
-              onChange={(value) =>
-                setVacancyAddressData((prev) => ({
-                  ...prev,
-                  vacancyStreet: value,
-                }))
-              }
-              value={vacancyAddressData.vacancyStreet}
-              label="Endereço"
-              placeholder=""
-              type="text"
-              isWarning={warningInput.vacancyStreetIsWarning}
-            />
-            <div className="wrapper__grid-template">
+      <main className="job-vacancy__main wrapper standard-height" ref={formRef}>
+        <Title size="h2" text={`Cadastrar Vaga (${registrationStep}/3)`} />
+        <section className="main__vacancy-form">
+          {registrationStep === 1 ? (
+            <div className="vacancy-form__panel">
               <InputText
                 onChange={(value) =>
-                  setVacancyAddressData((prev) => ({
-                    ...prev,
-                    vacancyNumber: value,
-                  }))
+                  setVacancyData((prev) => ({ ...prev, contractId: value }))
                 }
-                value={vacancyAddressData.vacancyNumber}
-                label="Número"
+                value={vacancyData.contractId}
+                label="ID do Contrato"
                 placeholder=""
                 type="text"
-                isWarning={warningInput.vacancyNumberIsWarning}
+                isWarning={warningInput.contractIdIsWarning}
               />
               <InputText
                 onChange={(value) =>
-                  setVacancyAddressData((prev) => ({
-                    ...prev,
-                    vacancyComplement: value,
-                  }))
+                  setVacancyData((prev) => ({ ...prev, vacancyCNPJ: value }))
                 }
-                value={vacancyAddressData.vacancyComplement}
-                label="Complemento"
+                value={vacancyData.vacancyCNPJ}
+                label="CNPJ do local da vaga"
                 placeholder=""
                 type="text"
-                isWarning={warningInput.vacancyComplementIsWarning}
+                mask="99.999.999/9999-99"
+                isWarning={warningInput.vacancyCNPJIsWarning}
+              />
+
+              <InputText
+                onChange={(value) =>
+                  setVacancyData((prev) => ({
+                    ...prev,
+                    vacancyCorporateName: value,
+                  }))
+                }
+                value={vacancyData.vacancyCorporateName}
+                label="Razão Social do local da vaga"
+                placeholder=""
+                type="text"
+                isWarning={warningInput.vacancyCorporateNameIsWarning}
+              />
+              <InputText
+                onChange={(value) =>
+                  setVacancyData((prev) => ({
+                    ...prev,
+                    vacancyTradeName: value,
+                  }))
+                }
+                value={vacancyData.vacancyTradeName}
+                label="Nome Fantasia do local da vaga"
+                placeholder=""
+                isWarning={warningInput.vacancyTradeNameIsWarning}
+                type="text"
               />
             </div>
-
-            <InputText
-              onChange={(value) =>
-                setVacancyAddressData((prev) => ({
-                  ...prev,
-                  vacancyNeighborhood: value,
-                }))
-              }
-              value={vacancyAddressData.vacancyNeighborhood}
-              label="Bairro"
-              placeholder=""
-              type="text"
-              isWarning={warningInput.vacancyNeighborhoodIsWarning}
-            />
-
-            <div className="wrapper__grid-template">
-              <InputTextSelect
-                options={elements}
-                searchOptions
-                setInputValue={(value) =>
+          ) : registrationStep === 2 ? (
+            <div className="vacancy-form__panel">
+              <InputText
+                onChange={searchAddressByCEP}
+                value={vacancyAddressData.vacancyCEP}
+                label="CEP"
+                mask="99999-999"
+                placeholder=""
+                type="text"
+                isWarning={warningInput.vacancyCEPIsWarning}
+              />
+              <InputText
+                onChange={(value) =>
                   setVacancyAddressData((prev) => ({
                     ...prev,
-                    vacancyState: value,
+                    vacancyStreet: value,
                   }))
                 }
-                label="Estado"
-                inputValue={vacancyAddressData.vacancyState}
+                value={vacancyAddressData.vacancyStreet}
+                label="Endereço"
+                placeholder=""
+                type="text"
+                isWarning={warningInput.vacancyStreetIsWarning}
               />
+              <div className="wrapper__grid-template">
+                <InputText
+                  onChange={(value) =>
+                    setVacancyAddressData((prev) => ({
+                      ...prev,
+                      vacancyNumber: value,
+                    }))
+                  }
+                  value={vacancyAddressData.vacancyNumber}
+                  label="Número"
+                  placeholder=""
+                  type="text"
+                  isWarning={warningInput.vacancyNumberIsWarning}
+                />
+                <InputText
+                  onChange={(value) =>
+                    setVacancyAddressData((prev) => ({
+                      ...prev,
+                      vacancyComplement: value,
+                    }))
+                  }
+                  value={vacancyAddressData.vacancyComplement}
+                  label="Complemento"
+                  placeholder=""
+                  type="text"
+                  isWarning={warningInput.vacancyComplementIsWarning}
+                />
+              </div>
 
               <InputText
                 onChange={(value) =>
                   setVacancyAddressData((prev) => ({
                     ...prev,
-                    vacancyCity: value,
+                    vacancyNeighborhood: value,
                   }))
                 }
-                value={vacancyAddressData.vacancyCity}
-                label="Cidade"
+                value={vacancyAddressData.vacancyNeighborhood}
+                label="Bairro"
                 placeholder=""
                 type="text"
-                isWarning={warningInput.vacancyCityIsWarning}
+                isWarning={warningInput.vacancyNeighborhoodIsWarning}
               />
+
+              <div className="wrapper__grid-template">
+                <InputTextSelect
+                  options={elements}
+                  searchOptions
+                  setInputValue={(value) =>
+                    setVacancyAddressData((prev) => ({
+                      ...prev,
+                      vacancyState: value,
+                    }))
+                  }
+                  label="Estado"
+                  inputValue={vacancyAddressData.vacancyState}
+                />
+
+                <InputText
+                  onChange={(value) =>
+                    setVacancyAddressData((prev) => ({
+                      ...prev,
+                      vacancyCity: value,
+                    }))
+                  }
+                  value={vacancyAddressData.vacancyCity}
+                  label="Cidade"
+                  placeholder=""
+                  type="text"
+                  isWarning={warningInput.vacancyCityIsWarning}
+                />
+              </div>
             </div>
-          </div>
-        ) : registrationStep === 3 ? (
-          <div className="form__wrapper">
-            <div className="wrapper__grid-template--modified">
+          ) : registrationStep === 3 ? (
+            <div className="vacancy-form__panel">
+              <div className="wrapper__grid-template--modified">
+                <InputText
+                  onChange={(value) =>
+                    setVacancyDescriptionData((prev) => ({
+                      ...prev,
+                      vacancyCBO: value,
+                    }))
+                  }
+                  value={vacancyDescriptionData.vacancyCBO}
+                  label="CBO"
+                  placeholder=""
+                  type="text"
+                  isWarning={warningInput.vacancyCBOIsWarning}
+                />
+                <InputText
+                  onChange={(value) =>
+                    setVacancyDescriptionData((prev) => ({
+                      ...prev,
+                      vacancySalary: value,
+                    }))
+                  }
+                  value={vacancyDescriptionData.vacancySalary}
+                  label="Salário	"
+                  placeholder=""
+                  type="text"
+                  isWarning={warningInput.vacancySalaryIsWarning}
+                />
+              </div>
               <InputText
                 onChange={(value) =>
                   setVacancyDescriptionData((prev) => ({
                     ...prev,
-                    vacancyCBO: value,
+                    vacancyName: value,
                   }))
                 }
-                value={vacancyDescriptionData.vacancyCBO}
-                label="CBO"
+                value={vacancyDescriptionData.vacancyName}
+                label="Nome da vaga"
                 placeholder=""
                 type="text"
-                isWarning={warningInput.vacancyCBOIsWarning}
+                isWarning={warningInput.vacancyNameIsWarning}
               />
-              <InputText
+              <Textarea
+                label="Benefícios"
                 onChange={(value) =>
                   setVacancyDescriptionData((prev) => ({
                     ...prev,
-                    vacancySalary: value,
+                    vacancyBenefits: value,
                   }))
                 }
-                value={vacancyDescriptionData.vacancySalary}
-                label="Salário	"
-                placeholder=""
-                type="text"
-                isWarning={warningInput.vacancySalaryIsWarning}
+                value={vacancyDescriptionData.vacancyBenefits}
+                isWarning={warningInput.vacancyBenefitsIsWarning}
+              />
+              <Textarea
+                label="Descrição da vaga"
+                onChange={(value) =>
+                  setVacancyDescriptionData((prev) => ({
+                    ...prev,
+                    vacancyDescription: value,
+                  }))
+                }
+                value={vacancyDescriptionData.vacancyDescription}
+                isWarning={warningInput.vacancyDescriptionIsWarning}
               />
             </div>
-            <InputText
-              onChange={(value) =>
-                setVacancyDescriptionData((prev) => ({
-                  ...prev,
-                  vacancyName: value,
-                }))
-              }
-              value={vacancyDescriptionData.vacancyName}
-              label="Nome da vaga"
-              placeholder=""
-              type="text"
-              isWarning={warningInput.vacancyNameIsWarning}
-            />
-            <Textarea
-              label="Benefícios"
-              onChange={(value) =>
-                setVacancyDescriptionData((prev) => ({
-                  ...prev,
-                  vacancyBenefits: value,
-                }))
-              }
-              value={vacancyDescriptionData.vacancyBenefits}
-              isWarning={warningInput.vacancyBenefitsIsWarning}
-            />
-            <Textarea
-              label="Descrição da vaga"
-              onChange={(value) =>
-                setVacancyDescriptionData((prev) => ({
-                  ...prev,
-                  vacancyDescription: value,
-                }))
-              }
-              value={vacancyDescriptionData.vacancyDescription}
-              isWarning={warningInput.vacancyDescriptionIsWarning}
-            />
-          </div>
-        ) : (
-          false
-        )}
-
-        <Button
-          buttonStyle="primary"
-          buttonText={registrationStep === 3 ? "Salvar" : "Continuar"}
-          onClick={continueHandler}
-        />
+          ) : (
+            false
+          )}
+          <Button
+            buttonStyle="primary"
+            buttonText={registrationStep === 3 ? "Salvar" : "Continuar"}
+            onClick={continueHandler}
+          />
+        </section>
       </main>
     </Layout>
   );
