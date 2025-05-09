@@ -12,7 +12,6 @@ import CloseOcenBlue from "../../public/icons/closes/close-icon-dark-ocean-blue.
 const Toast: React.FC = () => {
   const { toastConfig, toastVisible } = useToast();
   const [toastState, setToastState] = useState("");
-  console.log("toastVisible", toastVisible);
 
   useEffect(() => {
     if (toastVisible) {
